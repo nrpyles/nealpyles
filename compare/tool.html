@@ -219,7 +219,7 @@
   h2.sec small { font-weight: 500; font-size: 12.5px; color: var(--muted); }
 
   /* ---------- Comparison table ---------- */
-  .tablewrap { background: var(--card); border-radius: var(--radius); overflow-x: auto; box-shadow: var(--shadow); }
+  .tablewrap { background: var(--card); border-radius: var(--radius); overflow-x: auto; -webkit-overflow-scrolling: touch; box-shadow: var(--shadow); }
   table.cmp { width: 100%; border-collapse: collapse; min-width: 560px; }
   table.cmp th, table.cmp td { padding: 8px 15px; text-align: right; font-size: 14px; border-bottom: 1px solid var(--line); white-space: nowrap; font-variant-numeric: tabular-nums; }
   table.cmp th:first-child, table.cmp td:first-child { text-align: left; font-weight: 600; color: var(--muted); font-size: 13px; position: sticky; left: 0; background: var(--card); }
@@ -246,6 +246,29 @@
   .print-only { display: none; }
 
   @media (max-width: 860px) { .charts { grid-template-columns: 1fr; } }
+
+  /* ---------- Phones (iOS tuned) ---------- */
+  @media (max-width: 700px) {
+    .wrap { padding: 14px 12px 44px; }
+    /* 16px stops iOS Safari from auto zooming into focused fields */
+    input, select { font-size: 16px !important; }
+    header { padding: 16px 16px 18px; }
+    .brand-block img { height: 42px; }
+    header h1 { font-size: 18px; }
+    .brand-fields { width: 100%; grid-template-columns: 1fr 1fr; }
+    .brand-fields input { width: 100%; }
+    .toolbar { width: 100%; }
+    .toolbar .btn { flex: 1; text-align: center; }
+    .lookup-row input.addr { flex: 1 1 100%; min-width: 0; }
+    .lookup-row .btn { flex: 1 1 auto; }
+    .prop-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .g-field { width: auto; }
+    .g-field input, .g-field select { width: 100%; }
+    details.settings .inner { gap: 12px; }
+    .slider-row input[type=range] { height: 30px; }  /* bigger touch target */
+    .quick .big { font-size: 21px; }
+    .chartcard canvas { height: 215px; }
+  }
 
   /* ---------- Print: clean client ready PDF ---------- */
   @media print {
@@ -330,7 +353,7 @@
     <div class="step-eyebrow"><i>1</i> The Property <small>look it up, or type the numbers in</small></div>
     <div class="panel">
       <div class="lookup-row">
-        <input id="propAddr" class="addr" placeholder="Property address:  Street, City, State, Zip">
+        <input id="propAddr" class="addr" placeholder="Property address:  Street, City, State, Zip" autocomplete="street-address" autocapitalize="words" enterkeyhint="search">
         <button class="btn navy" id="lookupBtn" onclick="lookupProperty()">Look up property</button>
         <button class="btn navy" id="applyBtn" onclick="applyProperty()" style="display:none">Use this property</button>
       </div>
@@ -908,6 +931,11 @@ el('feeFields').addEventListener('input', e => {
 ============================================================ */
 function el(id) { return document.getElementById(id); }
 
+// iOS: number fields get the decimal keypad instead of the full keyboard
+function setInputModes() {
+  document.querySelectorAll('input[type=number]').forEach(i => i.setAttribute('inputmode', 'decimal'));
+}
+
 function buildCards() {
   const host = el('cards');
   host.innerHTML = '';
@@ -928,6 +956,7 @@ function buildCards() {
   const b = state.brand || {};
   el('brandName').value = b.name || ''; el('brandNmls').value = b.nmls || '';
   el('brandPhone').value = b.phone || ''; el('clientName').value = b.client || '';
+  setInputModes();
 }
 const DEFAULT_GLOBALS = { taxPct: 1.26, insAnnual: 3600, hoa: 0, horizon: '7', apprec: 3.5, rent: 2200, rentInc: 3 };
 function restoreGlobals() {
