@@ -77,6 +77,8 @@
     border-radius: 8px; padding: 9px 11px; font-size: 14px; width: 138px; font-family: inherit;
   }
   .g-field input.wide { width: 100%; }
+  .g-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 224px; }
+  .g-pair input { width: 100%; }
   select option { background: #12233c; color: #f5ead3; }
   input:focus, select:focus { outline: 2px solid rgba(231,76,60,.55); outline-offset: 0; }
   .hint { font-size: 12px; color: var(--mute); }
@@ -212,6 +214,7 @@
     .lookup-row .btn { flex: 1 1 auto; }
     .prop-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .g-field input, .g-field select { width: 100%; }
+    .g-pair { width: 100%; }
     .slider-row input[type=range] { height: 30px; }
     .quick .big { font-size: 23px; }
     .chartcard canvas { height: 230px; }
@@ -338,8 +341,11 @@
           <input id="gRent" type="number" step="50" value="2600">
         </div>
         <div class="g-field">
-          <label>Property tax rate / yr</label>
-          <input id="gTaxPct" type="number" step="0.1" value="2.1">
+          <label>Property taxes / yr (% or $)</label>
+          <div class="g-pair">
+            <input id="gTaxPct" type="number" step="0.1" value="2.1" title="Percent of the price per year">
+            <input id="gTaxAmt" type="number" step="100" title="Dollars per year">
+          </div>
         </div>
         <div class="g-field">
           <label>Insurance / yr</label>
@@ -1034,6 +1040,7 @@ function recalc() {
     syncCard(card, state.scenarios[i], null);
   });
 
+  syncTaxAmt();
   renderCallouts(g);
   renderTable(g);
   renderCloseTable();
@@ -1333,6 +1340,18 @@ function drawDscrChart(g, mode) {
 /* ============================================================
    Wire up globals and boot
 ============================================================ */
+// Tax dollars and tax percent stay linked to the purchase price
+function syncTaxAmt() {
+  const p = num(el('gPrice').value, 0);
+  const amtEl = el('gTaxAmt');
+  if (p > 0 && document.activeElement !== amtEl) amtEl.value = Math.round(p * num(el('gTaxPct').value, 0) / 100);
+}
+el('gTaxAmt').addEventListener('input', () => {
+  const p = num(el('gPrice').value, 0);
+  if (p > 0) el('gTaxPct').value = Math.round(num(el('gTaxAmt').value, 0) / p * 10000) / 100;
+  recalc();
+});
+
 ['gPrice', 'gRent', 'gTaxPct', 'gInsAnnual', 'gHoa', 'gExit',
  'brandName', 'brandNmls', 'brandPhone', 'clientName']
   .forEach(id => el(id).addEventListener('input', () => {
