@@ -230,46 +230,60 @@
       --amber: #b45309;
       --field: #ffffff;
     }
-    @page { size: letter; margin: 11mm; }
+    @page { size: letter; margin: 12mm; }
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { font-size: 12.5px; }
+    body { font-size: 12px; }
     .wrap { padding: 0; max-width: none; }
-    .toolbar, .addcard, .card .head button, details.more, details.settings,
-    .slider-row, .noprint, .lookup-row, .prop-status { display: none !important; }
-    header { padding: 0 0 10px; }
-    .logo-chip { padding: 0; }
-    .logo-chip img { height: 46px; }
-    header h1 { font-size: 18px; }
-    .brand-fields { grid-template-columns: repeat(4, auto); gap: 2px 14px; }
-    .brand-fields input { border: none; background: transparent; padding: 0; width: auto; font-size: 11.5px; color: var(--mute); }
-    .brand-fields input::placeholder { color: transparent; }
+
+    /* interactive app hidden entirely; the print sheet replaces it */
+    header, #stepProperty, #stepOptions, .snum, details.fold summary { display: none !important; }
     .print-only { display: block; }
-    .print-meta { font-size: 11.5px; color: var(--mute); margin: 8px 0 0; }
-    .panel, .card, .chartcard, .tablewrap, .callout { border: 1px solid var(--line); }
-    .step { margin-top: 14px; }
-    .panel { padding: 10px 14px; }
-    .prop-fields { margin-top: 8px; padding-top: 8px; }
-    .g-field input, .g-field select, .f input, .f select { border: none; background: transparent; padding: 0; font-size: 12.5px; font-weight: 700; }
-    select { appearance: none; }
+
+    /* letterhead + summary sheet */
+    .ps-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 10px; border-bottom: 3px solid var(--red); }
+    .ps-head img { height: 44px; }
+    .ps-contact { text-align: right; font-size: 11px; color: var(--mute); line-height: 1.5; }
+    .ps-contact b { color: var(--ink); font-size: 12.5px; }
+    .ps-title { font-family: 'Archivo Black', sans-serif; font-size: 21px; text-transform: uppercase; letter-spacing: -.01em; margin: 12px 0 2px; }
+    .ps-title em { font-style: normal; color: var(--red); }
+    .ps-meta { font-size: 11.5px; color: var(--mute); margin-bottom: 10px; }
+    .ps-assume { font-size: 10.5px; color: var(--mute); background: var(--panel2); border-radius: 6px; padding: 6px 10px; margin-bottom: 12px; }
+    .ps-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 10px; margin-bottom: 6px; }
+    .ps-card { border: 1px solid var(--line); border-top: 3px solid; border-radius: 8px; padding: 10px 12px; break-inside: avoid; }
+    .ps-name { font-weight: 800; font-size: 13px; margin-bottom: 2px; }
+    .ps-line { font-size: 10.5px; color: var(--ink2); }
+    .ps-pay { font-family: 'Archivo Black', sans-serif; font-size: 20px; margin: 6px 0 1px; }
+    .ps-pay span { font-family: 'Manrope', sans-serif; font-size: 10.5px; font-weight: 700; color: var(--mute); }
+    .ps-cash { font-size: 11px; color: var(--ink2); margin-bottom: 5px; }
+    .ps-cash b { color: var(--ink); }
+    .ps-mi { font-size: 9.5px; color: var(--mute); border-top: 1px dashed var(--line); padding-top: 5px; }
+
+    /* results content */
+    .step { margin-top: 12px; }
+    .panel, .chartcard, .tablewrap, .callout { border: 1px solid var(--line); }
+    .callouts { gap: 8px; }
+    .callout { break-inside: avoid; padding: 8px 11px; font-size: 11px; border-left: 3px solid var(--red); }
+    h2.sec { margin: 14px 0 6px; font-size: 14px; break-after: avoid; }
+    table.cmp th, table.cmp td { padding: 3.5px 10px; font-size: 10.5px; }
     table.cmp th:first-child, table.cmp td:first-child, table.cmp thead th:first-child { background: #fff; }
     table.cmp thead th { color: #fff; }
-    details.fold summary { display: none; }
-    details.fold .tablewrap { margin-top: 0; }
-    .cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .card { break-inside: avoid; }
-    .card .body { padding: 8px 12px; gap: 5px; }
-    .card .quick { padding: 8px 12px; }
-    .quick .big { font-size: 19px; }
-    .mi-line { padding: 4px 8px; }
-    .callouts { gap: 8px; }
-    .callout { break-inside: avoid; padding: 8px 11px; font-size: 12px; }
-    table.cmp th, table.cmp td { padding: 4px 10px; font-size: 11.5px; }
     .tablewrap { break-inside: avoid; }
-    h2.sec { margin: 12px 0 6px; break-after: avoid; }
-    .charts { grid-template-columns: 1fr 1fr; gap: 10px; }
-    .chartcard { break-inside: avoid; }
-    .chartcard canvas { height: 200px; }
-    footer { margin-top: 14px; font-size: 9.5px; }
+    details.fold .tablewrap { margin-top: 0; }
+    .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .chartcard { break-inside: avoid; padding: 10px 12px 8px; }
+    .chartcard h3 { font-size: 11.5px; }
+    .chartcard .desc { font-size: 9.5px; margin-bottom: 5px; }
+    .chartcard canvas { height: 175px; }
+    .legend { font-size: 9.5px; gap: 8px; margin-top: 4px; }
+
+    /* FAQ page */
+    #printFaq { break-before: page; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; }
+    .faq-q { break-inside: avoid; }
+    .faq-q h4 { font-size: 12px; margin-bottom: 3px; color: var(--ink); }
+    .faq-q p { font-size: 10.5px; color: var(--ink2); line-height: 1.55; }
+
+    footer { margin-top: 14px; padding-top: 10px; font-size: 8.5px; }
   }
 </style>
 </head>
@@ -295,10 +309,10 @@
       <button class="btn ghost" onclick="resetAll()">Reset</button>
     </div>
   </header>
-  <div class="print-meta print-only" id="printMeta"></div>
+  <div id="printSheet" class="print-only"></div>
 
   <!-- ============ Step 1: Property ============ -->
-  <div class="step">
+  <div class="step" id="stepProperty">
     <div class="snum">01 — The Property <small>look it up, or type the numbers in</small></div>
     <div class="panel">
       <div class="lookup-row">
@@ -368,7 +382,7 @@
   </div>
 
   <!-- ============ Step 2: Options ============ -->
-  <div class="step">
+  <div class="step" id="stepOptions">
     <div class="snum">02 — The Loan Options <small>mortgage insurance, fees, and title costs are figured automatically</small></div>
     <div class="cards" id="cards"></div>
   </div>
@@ -412,6 +426,18 @@
         <canvas id="chNetCost"></canvas>
         <div class="legend" id="legLines3"></div>
       </div>
+    </div>
+  </div>
+
+  <div id="printFaq" class="print-only">
+    <h2 class="sec">Questions people <em>always ask.</em></h2>
+    <div class="faq-grid">
+      <div class="faq-q"><h4>Are these my final numbers?</h4><p>No, they are careful estimates built from real lender fee schedules and current Texas title rates so you can plan with confidence. Your official numbers arrive on a Loan Estimate within 3 business days of applying.</p></div>
+      <div class="faq-q"><h4>What exactly is "cash to close"?</h4><p>Everything you bring to the closing table: your down payment, lender and title fees, the first year of home insurance, prepaid interest, and the escrow account deposits, minus any seller or lender credits.</p></div>
+      <div class="faq-q"><h4>Do I pay mortgage insurance forever?</h4><p>On a conventional loan it drops off automatically once you reach 22% equity, and you can request removal at 20%. FHA mortgage insurance runs 11 years with 10% or more down, otherwise for the life of the loan, which is why many FHA buyers refinance later. VA loans never have monthly mortgage insurance.</p></div>
+      <div class="faq-q"><h4>Why can the lowest payment still cost more?</h4><p>A lower rate or smaller down payment can hide costs that show up later: mortgage insurance, financed fees, and slower equity. The "true net cost" line adds up everything you pay and subtracts the equity you build, so different paths compare fairly.</p></div>
+      <div class="faq-q"><h4>Which option should I pick?</h4><p>It depends on how long you plan to stay, how much cash you want to keep in reserve, and your monthly comfort zone. The break even callouts on page 1 show when paying more upfront starts winning. Fifteen minutes on the phone and we will land on the right one together.</p></div>
+      <div class="faq-q"><h4>What happens next?</h4><p>Reach out and we will verify your numbers, lock a rate when you are ready, and close in as fast as 18 to 25 days. Call or text (469) 734-6352, or apply at nealpyles.com.</p></div>
     </div>
   </div>
 
@@ -1089,12 +1115,41 @@ function recalc() {
 }
 
 function updatePrintMeta() {
-  const bits = [];
+  buildPrintSheet();
+}
+
+// Purpose-built print summary: formatted, readable, generated from results
+function buildPrintSheet() {
+  const g = readGlobals();
   const client = el('clientName').value.trim();
-  if (client) bits.push('Prepared for ' + client);
-  if (state.prop && state.prop.address) bits.push(state.prop.address);
+  const bits = [];
+  if (client) bits.push('Prepared for ' + escapeHtml(client));
+  if (state.prop && state.prop.address) bits.push(escapeHtml(state.prop.address));
   bits.push(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
-  el('printMeta').textContent = bits.join('  ·  ');
+  const logoSrc = document.querySelector('.logo-chip img').src;
+  const b = state.brand || {};
+
+  const cards = results.map((r, i) => {
+    const s = state.scenarios[i];
+    return `<div class="ps-card" style="border-top-color:${COLORS[i % 4]}">
+      <div class="ps-name">${escapeHtml(s.name)}</div>
+      <div class="ps-line">${TYPE_LABEL[s.type]} · ${s.termYears} yr · ${s.rate}% rate</div>
+      <div class="ps-line">${fmt$(r.price)} price · ${fmt$(r.down)} down (${fmtPct(r.price ? r.down / r.price * 100 : 0)})</div>
+      <div class="ps-pay">${fmt$(r.totalMo)}<span> / month</span></div>
+      <div class="ps-cash">Cash to close <b>${fmt$(r.cashToClose)}</b></div>
+      <div class="ps-mi">${escapeHtml(miLineText(s, r))}</div>
+    </div>`;
+  }).join('');
+
+  el('printSheet').innerHTML = `
+    <div class="ps-head">
+      <img src="${logoSrc}" alt="Lone Star Financing">
+      <div class="ps-contact"><b>${escapeHtml(b.name || '')}</b><br>${escapeHtml(b.nmls || '')} · ${escapeHtml(b.phone || '')}<br>npyles@lonestarfinancing.com</div>
+    </div>
+    <div class="ps-title">${client ? 'Loan options for <em>' + escapeHtml(client) + '</em>' : 'Every option, <em>side by side.</em>'}</div>
+    <div class="ps-meta">${bits.join('  ·  ')}</div>
+    <div class="ps-assume">Assumptions: property taxes ${num(g.taxPct, 0)}% per year · home insurance ${fmt$(num(g.insAnnual, 0))} per year · HOA ${fmt$(num(g.hoa, 0))} per month · home appreciation ${num(g.apprec, 0)}% per year · compared over ${num(g.horizon, 7)} years. Mortgage insurance, FHA and VA fees, and Texas title premiums are computed automatically from each option.</div>
+    <div class="ps-cards">${cards}</div>`;
 }
 
 /* ---------- Callouts ---------- */

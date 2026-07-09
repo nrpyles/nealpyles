@@ -237,43 +237,55 @@
       --redbg: #fdeaec;
       --field: #ffffff;
     }
-    @page { size: letter; margin: 11mm; }
+    @page { size: letter; margin: 12mm; }
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { font-size: 12.5px; }
+    body { font-size: 12px; }
     .wrap { padding: 0; max-width: none; }
-    .toolbar, .addcard, .card .head button, details.more, details.settings,
-    .slider-row, .noprint, .lookup-row, .prop-status { display: none !important; }
-    header { padding: 0 0 10px; }
-    .logo-chip { padding: 0; }
-    .logo-chip img { height: 46px; }
-    header h1 { font-size: 18px; }
-    .brand-fields { grid-template-columns: repeat(4, auto); gap: 2px 14px; }
-    .brand-fields input { border: none; background: transparent; padding: 0; width: auto; font-size: 11.5px; color: var(--mute); }
-    .brand-fields input::placeholder { color: transparent; }
+
+    header, #stepProperty, #stepOptions, .snum, details.fold summary { display: none !important; }
     .print-only { display: block; }
-    .print-meta { font-size: 11.5px; color: var(--mute); margin: 8px 0 0; }
-    .panel, .card, .chartcard, .tablewrap, .callout { border: 1px solid var(--line); }
-    .step { margin-top: 14px; }
-    .panel { padding: 10px 14px; }
-    .prop-fields { margin-top: 8px; padding-top: 8px; }
-    .g-field input, .g-field select, .f input, .f select { border: none; background: transparent; padding: 0; font-size: 12.5px; font-weight: 700; }
-    select { appearance: none; }
-    table.cmp th:first-child, table.cmp td:first-child, table.cmp thead th:first-child { background: #fff; }
-    details.fold summary { display: none; }
-    details.fold .tablewrap { margin-top: 0; }
-    .cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .card { break-inside: avoid; }
-    .card .body { padding: 8px 12px; gap: 5px; }
-    .card .quick { padding: 8px 12px; }
-    .quick .big { font-size: 20px; }
+
+    .ps-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 10px; border-bottom: 3px solid var(--red); }
+    .ps-head img { height: 44px; }
+    .ps-contact { text-align: right; font-size: 11px; color: var(--mute); line-height: 1.5; }
+    .ps-contact b { color: var(--ink); font-size: 12.5px; }
+    .ps-title { font-family: 'Archivo Black', sans-serif; font-size: 21px; text-transform: uppercase; letter-spacing: -.01em; margin: 12px 0 2px; }
+    .ps-title em { font-style: normal; color: var(--red); }
+    .ps-meta { font-size: 11.5px; color: var(--mute); margin-bottom: 10px; }
+    .ps-assume { font-size: 10.5px; color: var(--mute); background: var(--panel2); border-radius: 6px; padding: 6px 10px; margin-bottom: 12px; }
+    .ps-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 10px; margin-bottom: 6px; }
+    .ps-card { border: 1px solid var(--line); border-top: 3px solid; border-radius: 8px; padding: 10px 12px; break-inside: avoid; }
+    .ps-name { font-weight: 800; font-size: 13px; margin-bottom: 2px; }
+    .ps-line { font-size: 10.5px; color: var(--ink2); }
+    .ps-pay { font-family: 'Archivo Black', sans-serif; font-size: 20px; margin: 6px 0 1px; }
+    .ps-pay span { font-family: 'Manrope', sans-serif; font-size: 10.5px; font-weight: 700; color: var(--mute); }
+    .ps-pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 9.5px; font-weight: 800; margin-left: 6px; vertical-align: 3px; }
+    .ps-cash { font-size: 11px; color: var(--ink2); margin-bottom: 5px; }
+    .ps-cash b { color: var(--ink); }
+    .ps-mi { font-size: 9.5px; color: var(--mute); border-top: 1px dashed var(--line); padding-top: 5px; }
+
+    .step { margin-top: 12px; }
+    .panel, .chartcard, .tablewrap, .callout { border: 1px solid var(--line); }
     .callouts { gap: 8px; }
-    .callout { break-inside: avoid; padding: 8px 11px; font-size: 12px; }
-    table.cmp th, table.cmp td { padding: 4px 10px; font-size: 11.5px; }
+    .callout { break-inside: avoid; padding: 8px 11px; font-size: 11px; border-left: 3px solid var(--red); }
+    h2.sec { margin: 14px 0 6px; font-size: 14px; break-after: avoid; }
+    table.cmp th, table.cmp td { padding: 3.5px 10px; font-size: 10.5px; }
+    table.cmp th:first-child, table.cmp td:first-child, table.cmp thead th:first-child { background: #fff; }
     .tablewrap { break-inside: avoid; }
-    h2.sec { margin: 12px 0 6px; break-after: avoid; }
-    .chartcard { break-inside: avoid; }
-    .chartcard canvas { height: 210px; }
-    footer { margin-top: 14px; font-size: 9.5px; }
+    details.fold .tablewrap { margin-top: 0; }
+    .chartcard { break-inside: avoid; padding: 10px 12px 8px; }
+    .chartcard h3 { font-size: 11.5px; }
+    .chartcard .desc { font-size: 9.5px; margin-bottom: 5px; }
+    .chartcard canvas { height: 185px; }
+    .legend { font-size: 9.5px; gap: 8px; margin-top: 4px; }
+
+    #printFaq { break-before: page; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; }
+    .faq-q { break-inside: avoid; }
+    .faq-q h4 { font-size: 12px; margin-bottom: 3px; color: var(--ink); }
+    .faq-q p { font-size: 10.5px; color: var(--ink2); line-height: 1.55; }
+
+    footer { margin-top: 14px; padding-top: 10px; font-size: 8.5px; }
   }
 </style>
 </head>
@@ -299,10 +311,10 @@
       <button class="btn ghost" onclick="resetAll()">Reset</button>
     </div>
   </header>
-  <div class="print-meta print-only" id="printMeta"></div>
+  <div id="printSheet" class="print-only"></div>
 
   <!-- ============ Step 1: Property ============ -->
-  <div class="step">
+  <div class="step" id="stepProperty">
     <div class="snum">01 — The Property <small>look it up, or type the numbers in</small></div>
     <div class="panel">
       <div class="lookup-row">
@@ -370,7 +382,7 @@
   </div>
 
   <!-- ============ Step 2: Financing ============ -->
-  <div class="step">
+  <div class="step" id="stepOptions">
     <div class="snum">02 — The Financing <small>a longer prepay penalty buys a lower rate. Compare the tradeoff.</small></div>
     <div class="cards" id="cards"></div>
   </div>
@@ -394,6 +406,18 @@
       <div class="desc">Each line is one financing option at its rate. Cross 1.00 and the property covers itself; cross 1.25 and you unlock most lenders' best pricing. Dots mark where each option sits now.</div>
       <canvas id="chDscr"></canvas>
       <div class="legend" id="legDscr"></div>
+    </div>
+  </div>
+
+  <div id="printFaq" class="print-only">
+    <h2 class="sec">Questions investors <em>always ask.</em></h2>
+    <div class="faq-grid">
+      <div class="faq-q"><h4>What is DSCR and why does it matter?</h4><p>Debt service coverage ratio: the monthly rent divided by the full monthly payment (principal, interest, taxes, insurance, HOA). At 1.0 the property pays for itself and most lenders will fund the deal. At 1.25 you unlock the best pricing tiers. Your tax returns, W2s, and personal debt never enter the math.</p></div>
+      <div class="faq-q"><h4>What are the typical minimums?</h4><p>20% or more down, a credit score around 620 to 680 or better, and 3 to 6 months of payments in reserves after closing. Options exist below a 1.0 DSCR at adjusted pricing. Loan amounts usually run $75,000 to $3 million.</p></div>
+      <div class="faq-q"><h4>Why would I ever accept a prepayment penalty?</h4><p>Because it buys a lower rate. A 5 year penalty structure typically prices well below a no penalty loan. If you plan to hold the property past the penalty window, the penalty never bites and the cheaper rate wins. If you plan to sell or refinance early, the "cost to exit" comparison on page 1 shows which structure actually costs less for your timeline.</p></div>
+      <div class="faq-q"><h4>Will the lender use my rent number?</h4><p>The qualifying rent is set by the appraiser's market rent schedule (Form 1007), not your estimate or even the current lease alone. The market rent estimate in this analysis is a good preview, but plan around the appraisal.</p></div>
+      <div class="faq-q"><h4>Can I buy in an LLC? What about short term rentals?</h4><p>Yes, most DSCR lenders close in an LLC with a personal guarantee, which is how most investors hold rentals. Short term rentals work with many lenders using 12 month revenue history or a market rent analysis, usually with a bigger DSCR cushion.</p></div>
+      <div class="faq-q"><h4>What happens next?</h4><p>Send the address and your target numbers, and we will pull the market rent, price the penalty structures against your hold plan, and lock the one that fits. Call or text (469) 734-6352, or start at nealpyles.com.</p></div>
     </div>
   </div>
 
@@ -1017,12 +1041,50 @@ function recalc() {
 }
 
 function updatePrintMeta() {
-  const bits = [];
+  buildPrintSheet();
+}
+
+// Purpose-built print summary: formatted, readable, generated from results
+function buildPrintSheet() {
+  const g = readGlobals();
+  const exitYrs = num(g.exit, 3);
   const client = el('clientName').value.trim();
-  if (client) bits.push('Prepared for ' + client);
-  if (state.prop && state.prop.address) bits.push(state.prop.address);
+  const bits = [];
+  if (client) bits.push('Prepared for ' + escapeHtml(client));
+  if (state.prop && state.prop.address) bits.push(escapeHtml(state.prop.address));
   bits.push(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
-  el('printMeta').textContent = bits.join('  ·  ');
+  const logoSrc = document.querySelector('.logo-chip img').src;
+  const b = state.brand || {};
+  const PILL_STYLE = {
+    strong: 'background:#e6f7f0;color:#0e9f6e', ok: 'background:#e8f0fe;color:#0d3b78',
+    tight: 'background:#fef3e2;color:#b45309', no: 'background:#fdeaec;color:#c2172b'
+  };
+
+  const cards = results.map((r, i) => {
+    const s = state.scenarios[i];
+    const exitNote = r.penalty > 0
+      ? 'Sell year ' + exitYrs + ': ' + fmt$(r.penalty) + ' penalty (' + r.penaltyPct + '% of balance)'
+      : 'Sell year ' + exitYrs + ': no penalty';
+    return `<div class="ps-card" style="border-top-color:${COLORS[i % 4]}">
+      <div class="ps-name">${escapeHtml(s.name)}</div>
+      <div class="ps-line">${clampPct(s.downPct)}% down · ${s.rate}% · ${STRUCTURE_LABEL[s.structure]}</div>
+      <div class="ps-line">${PREPAY[s.prepay || 'none'].label}</div>
+      <div class="ps-pay">${fmtDscr(r.dscr)}<span> DSCR</span><span class="ps-pill" style="${PILL_STYLE[r.tier.pill]}">${escapeHtml(r.tier.label)}</span></div>
+      <div class="ps-cash">Rent ${fmt$(r.rent)} vs payment ${fmt$(r.pitia)} = <b>${fmt$0(r.cashFlow)}/mo</b></div>
+      <div class="ps-cash">Cash to close <b>${fmt$(r.cashToClose)}</b> + ${fmt$(r.reserves)} reserves</div>
+      <div class="ps-mi">${escapeHtml(exitNote)}</div>
+    </div>`;
+  }).join('');
+
+  el('printSheet').innerHTML = `
+    <div class="ps-head">
+      <img src="${logoSrc}" alt="Lone Star Financing">
+      <div class="ps-contact"><b>${escapeHtml(b.name || '')}</b><br>${escapeHtml(b.nmls || '')} · ${escapeHtml(b.phone || '')}<br>npyles@lonestarfinancing.com</div>
+    </div>
+    <div class="ps-title">${client ? 'DSCR analysis for <em>' + escapeHtml(client) + '</em>' : 'Will that rental <em>qualify?</em>'}</div>
+    <div class="ps-meta">${bits.join('  ·  ')}</div>
+    <div class="ps-assume">The property: ${fmt$(num(g.price, 0))} purchase price · ${fmt$(num(g.rent, 0))}/mo market rent · ${num(g.taxPct, 0)}% property taxes · ${fmt$(num(g.insAnnual, 0))}/yr insurance · ${fmt$(num(g.hoa, 0))}/mo HOA · planning to sell or refinance around year ${exitYrs}. DSCR = rent ÷ full payment; 1.0 qualifies, 1.25 unlocks best pricing.</div>
+    <div class="ps-cards">${cards}</div>`;
 }
 
 /* ---------- Callouts ---------- */
