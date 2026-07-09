@@ -1488,64 +1488,94 @@ function pdfLinesFromTextContent(tc) {
 
 const wsMoney = t => parseFloat(String(t).replace(/[$,]/g, ''));
 
+// Split a joined PDF row into (label, amount) pairs. Two column worksheets
+// merge into one line per row, so classify each pair, not each line.
+// "@ $300.00" rate annotations stay attached to their label.
+function wsPairsFromLine(line) {
+  const tokens = [];
+  const re = /\$\s?([\d,]+(?:\.\d+)?)/g;
+  let m;
+  while ((m = re.exec(line))) {
+    const pre = line.slice(Math.max(0, m.index - 2), m.index);
+    tokens.push({ idx: m.index, end: re.lastIndex, val: wsMoney(m[1]), isRate: /@\s?$/.test(pre) });
+  }
+  const pairs = [];
+  let cursor = 0;
+  tokens.forEach(t => {
+    if (t.isRate) return;
+    const label = line.slice(cursor, t.idx).trim();
+    pairs.push({ label, amt: t.val });
+    cursor = t.end;
+  });
+  return pairs;
+}
+
+const WS_IGNORE = /^(lender fees|third party fees|taxes and other government fees|prepaids and initial escrow|initial escrow payment|prepaids|funds due|estimated|total|downpayment|credits applied|first mortgage|other financing|supp property|aggregate)/i;
+
+function wsClassifyPair(p, label, amt) {
+  const L = label.toLowerCase();
+  const addSum = (k, v) => { p.sums[k] = (p.sums[k] || 0) + v; };
+  const monthsIn = lbl => { const m = lbl.match(/\((\d+)\s*(?:months?|mos?)/i); return m ? parseInt(m[1], 10) : null; };
+  const rateIn = lbl => { const m = lbl.match(/@\s*\$\s?([\d,]+(?:\.\d+)?)/); return m ? wsMoney(m[1]) : null; };
+
+  if (WS_IGNORE.test(L)) return;
+  if (/% of (?:total )?loan amount|originator compensation|\(points\)/i.test(L)) { addSum('points', amt); return; }
+  if (/underwriting|admin fee|application fee|commitment fee/i.test(L)) { addSum('lenderFlat', amt); return; }
+  if (/processing/i.test(L)) { addSum('processing', amt); return; }
+  if (/appraisal/i.test(L)) { p.fees.appraisal = amt; return; }
+  if (/rent schedule|1007/i.test(L)) { p.fees.rentSchedule = amt; return; }
+  if (/title.*attorney/i.test(L)) { addSum('titleMisc', amt); return; }
+  if (/credit report|verification of employment|flood cert|tax monitoring|tax status|tax service|udm|attorney/i.test(L)) { addSum('creditFees', amt); return; }
+  if (/title.*(deed preparation|notary|tax certificate|guaranty)/i.test(L)) { addSum('titleMisc', amt); return; }
+  if (/endorsement/i.test(L)) { addSum('endorsements', amt); return; }
+  if (/owner'?s title/i.test(L)) { p.fees.ownersOptional = amt; return; }
+  if (/lender'?s title/i.test(L)) { p.lenderTitle = amt; return; }
+  if (/settlement or closing|escrow fee/i.test(L)) { p.fees.escrowFee = amt; return; }
+  if (/survey/i.test(L)) { if (amt > 0) p.fees.survey = amt; return; }
+  if (/recording|transfer tax/i.test(L)) { addSum('recording', amt); return; }
+  if (/hazard insurance premium|homeowner'?s insurance premium/i.test(L)) {
+    const r = rateIn(label);
+    if (r) p.insAnnual = r * 12; else if (amt > 0) p.insAnnual = amt;
+    return;
+  }
+  if (/prepaid interest/i.test(L)) {
+    const m = label.match(/\((\d+)\s*days?/i);
+    if (m) p.fees.prepaidDays = parseInt(m[1], 10);
+    return;
+  }
+  if (/^property taxes/i.test(L)) {
+    const mo = monthsIn(label), r = rateIn(label);
+    if (mo) p.fees.taxEscrowMo = mo;
+    if (r) p.taxMonthly = r;
+    else if (!label.includes('(') && amt > 0 && !p.taxMonthly) p.taxMonthly = amt;
+    return;
+  }
+  if (/hazard insurance reserve/i.test(L)) { const mo = monthsIn(label); if (mo) p.fees.insEscrowMo = mo; return; }
+  if (/mortgage insurance (?:premium|reserve)/i.test(L)) { const r = rateIn(label); if (r > 0) p.miMonthly = r; return; }
+  if (/^mortgage insurance$/i.test(L.trim())) { if (amt > 0) p.miMonthly = amt; return; }
+  if (/^homeowner'?s insurance$/i.test(L.trim())) { if (amt > 0 && !p.insAnnual) p.insAnnual = amt * 12; return; }
+  if (/lender credit/i.test(L)) { if (amt > 0.5) p.lenderCredit = amt; return; }
+  if (/seller credit/i.test(L)) { if (amt > 0.5) p.sellerCredit = amt; return; }
+}
+
 function parseWorksheetLines(lines) {
   const p = { fees: {}, sums: {} };
-  const addSum = (k, v) => { p.sums[k] = (p.sums[k] || 0) + v; };
-  const firstMoney = line => { const m = line.match(/\$\s?([\d,]+(?:\.\d{1,2})?)/); return m ? wsMoney(m[1]) : null; };
-
+  let m;
   for (const line of lines) {
-    const L = line.toLowerCase();
-    let m;
     if ((m = line.match(/purchase price:?\s*\$?\s?([\d,]+(?:\.\d{2})?)/i))) p.price = wsMoney(m[1]);
     if ((m = line.match(/(?:total )?loan amount:?\s*\$?\s?([\d,]+(?:\.\d{2})?)/i))) p.loan = wsMoney(m[1]);
     if ((m = line.match(/rate\s*\/\s*apr:?\s*([\d.]+)\s*%/i))) p.rate = parseFloat(m[1]);
-    if ((m = line.match(/product:?\s*(\d+)\s*year\s*([a-z ]+?)(?:fixed|arm)/i))) {
+    if ((m = line.match(/product:?\s*(\d+)\s*year\s*([a-z\- ]*?)(?:fixed|arm)/i))) {
       p.term = parseInt(m[1], 10);
       const prod = m[2].toLowerCase();
       p.type = prod.includes('fha') ? 'fha' : prod.includes('va') ? 'va' : prod.includes('jumbo') ? 'jumbo' : 'conv';
+      p.io = /interest only|\bio\b/i.test(line);
     }
     if ((m = line.match(/downpayment\/funds from borrower\s*\$?\s?([\d,]+(?:\.\d{2})?)/i))) p.down = wsMoney(m[1]);
-
-    const amt = firstMoney(line);
-    if (amt === null) continue;
-
-    if (/% of loan amount \(points\)/i.test(line)) { addSum('points', amt); continue; }
-    if (/underwriting fee|admin fee|application fee|commitment fee/i.test(L)) { addSum('lenderFlat', amt); continue; }
-    if (/processing/i.test(L)) { addSum('processing', amt); continue; }
-    if (/appraisal fee/i.test(L)) { p.fees.appraisal = amt; continue; }
-    if (/credit report|verification of employment|flood cert|tax monitoring|tax status|tax service|udm|lender'?s attorney/i.test(L)) { addSum('creditFees', amt); continue; }
-    if (/title.*deed preparation|title.*notary|title.*tax certificate|title.*guaranty|tx attorney|title.*attorney/i.test(L)) { addSum('titleMisc', amt); continue; }
-    if (/endorsement/i.test(L)) { addSum('endorsements', amt); continue; }
-    if (/owner'?s title insurance/i.test(L)) { p.fees.ownersOptional = amt; continue; }
-    if (/lender'?s title insurance/i.test(L)) { p.lenderTitle = amt; continue; }
-    if (/settlement or closing fee|escrow fee/i.test(L)) { p.fees.escrowFee = amt; continue; }
-    if (/title.*survey/i.test(L)) { p.fees.survey = amt; continue; }
-    if (/recording fee|transfer tax/i.test(L)) { addSum('recording', amt); continue; }
-    if (/hazard insurance premium\s*\((\d+)\s*months/i.test(line)) {
-      const mm = line.match(/hazard insurance premium\s*\((\d+)\s*months\s*@\s*\$?\s?([\d,]+(?:\.\d{2})?)/i);
-      if (mm) p.insAnnual = wsMoney(mm[2]) * 12;
-      continue;
-    }
-    if ((m = line.match(/prepaid interest\s*\((\d+)\s*days/i))) { p.fees.prepaidDays = parseInt(m[1], 10); continue; }
-    if ((m = line.match(/property taxes\s*\((\d+)\s*months\s*@\s*\$?\s?([\d,]+(?:\.\d{2})?)/i))) {
-      if (parseInt(m[1], 10) > 0) p.fees.taxEscrowMo = parseInt(m[1], 10);
-      p.taxMonthly = wsMoney(m[2]);
-      continue;
-    }
-    if ((m = line.match(/hazard insurance reserve\s*\((\d+)\s*months/i))) { p.fees.insEscrowMo = parseInt(m[1], 10); continue; }
-    if ((m = line.match(/mortgage insurance (?:premium|reserve)?\s*\(\d+\s*months\s*@\s*\$?\s?([\d,]+(?:\.\d{2})?)/i))) {
-      const v = wsMoney(m[1]);
-      if (v > 0) p.miMonthly = v;
-      continue;
-    }
-    if (/^mortgage insurance\b/i.test(line.trim()) && amt > 0) { p.miMonthly = amt; continue; }
-    if (/^property taxes\b/i.test(line.trim()) && amt > 0 && !p.taxMonthly) { p.taxMonthly = amt; continue; }
-    if (/lender credits?/i.test(L) && amt > 0.5) { p.lenderCredit = amt; continue; }
-    if (/seller credits?/i.test(L) && amt > 0.5) { p.sellerCredit = amt; continue; }
+    wsPairsFromLine(line).forEach(pair => { if (pair.label) wsClassifyPair(p, pair.label, pair.amt); });
   }
   return p;
 }
-
 async function handleWorksheetFile(file) {
   const status = el('wsStatus');
   status.className = 'prop-status';

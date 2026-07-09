@@ -315,13 +315,16 @@
 
   <!-- ============ Step 1: Property ============ -->
   <div class="step" id="stepProperty">
-    <div class="snum">01 — The Property <small>look it up, or type the numbers in</small></div>
+    <div class="snum">01 — The Property <small>look it up, type it in, or upload a fee worksheet</small></div>
     <div class="panel">
       <div class="lookup-row">
         <input id="propAddr" class="addr" placeholder="Property address:  Street, City, State, Zip" autocomplete="street-address" autocapitalize="words" enterkeyhint="search">
         <button class="btn" id="lookupBtn" onclick="lookupProperty()">Look up property</button>
         <button class="btn" id="applyBtn" onclick="applyProperty()" style="display:none">Use this property</button>
+        <button class="btn ghost" onclick="el('wsFile').click()">Upload fee worksheet</button>
+        <input type="file" id="wsFile" accept="application/pdf,.pdf" style="display:none">
       </div>
+      <div class="prop-status" id="wsStatus"></div>
       <div class="prop-status" id="propStatus"></div>
       <div class="prop-chips" id="propChips"></div>
 
@@ -1347,6 +1350,191 @@ window.addEventListener('afterprint', () => drawDscrChart(readGlobals()));
 el('apiKey').value = localStorage.getItem('rentcastKey') || '';
 el('apiKey').addEventListener('input', () => localStorage.setItem('rentcastKey', el('apiKey').value.trim()));
 el('propAddr').addEventListener('keydown', e => { if (e.key === 'Enter') lookupProperty(); });
+
+/* ============================================================
+   Fee worksheet upload: parse a lender Initial Fees Worksheet
+   PDF in the browser and populate the tool from it
+============================================================ */
+let pdfjsReady = null;
+function loadPdfJs() {
+  if (window.pdfjsLib) return Promise.resolve();
+  if (pdfjsReady) return pdfjsReady;
+  pdfjsReady = new Promise((res, rej) => {
+    const sc = document.createElement('script');
+    sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+    sc.onload = () => {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      res();
+    };
+    sc.onerror = () => { pdfjsReady = null; rej(new Error('Could not load the PDF reader. This feature needs an internet connection.')); };
+    document.head.appendChild(sc);
+  });
+  return pdfjsReady;
+}
+
+function pdfLinesFromTextContent(tc) {
+  const rows = [];
+  tc.items.forEach(it => {
+    const y = it.transform[5], x = it.transform[4];
+    let row = rows.find(r => Math.abs(r.y - y) <= 2.5);
+    if (!row) { row = { y, items: [] }; rows.push(row); }
+    row.items.push({ x, s: it.str });
+  });
+  return rows.sort((a, b) => b.y - a.y)
+    .map(r => r.items.sort((a, b) => a.x - b.x).map(o => o.s).join(' ').replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
+}
+
+const wsMoney = t => parseFloat(String(t).replace(/[$,]/g, ''));
+
+// Split a joined PDF row into (label, amount) pairs. Two column worksheets
+// merge into one line per row, so classify each pair, not each line.
+// "@ $300.00" rate annotations stay attached to their label.
+function wsPairsFromLine(line) {
+  const tokens = [];
+  const re = /\$\s?([\d,]+(?:\.\d+)?)/g;
+  let m;
+  while ((m = re.exec(line))) {
+    const pre = line.slice(Math.max(0, m.index - 2), m.index);
+    tokens.push({ idx: m.index, end: re.lastIndex, val: wsMoney(m[1]), isRate: /@\s?$/.test(pre) });
+  }
+  const pairs = [];
+  let cursor = 0;
+  tokens.forEach(t => {
+    if (t.isRate) return;
+    const label = line.slice(cursor, t.idx).trim();
+    pairs.push({ label, amt: t.val });
+    cursor = t.end;
+  });
+  return pairs;
+}
+
+const WS_IGNORE = /^(lender fees|third party fees|taxes and other government fees|prepaids and initial escrow|initial escrow payment|prepaids|funds due|estimated|total|downpayment|credits applied|first mortgage|other financing|supp property|aggregate)/i;
+
+function wsClassifyPair(p, label, amt) {
+  const L = label.toLowerCase();
+  const addSum = (k, v) => { p.sums[k] = (p.sums[k] || 0) + v; };
+  const monthsIn = lbl => { const m = lbl.match(/\((\d+)\s*(?:months?|mos?)/i); return m ? parseInt(m[1], 10) : null; };
+  const rateIn = lbl => { const m = lbl.match(/@\s*\$\s?([\d,]+(?:\.\d+)?)/); return m ? wsMoney(m[1]) : null; };
+
+  if (WS_IGNORE.test(L)) return;
+  if (/% of (?:total )?loan amount|originator compensation|\(points\)/i.test(L)) { addSum('points', amt); return; }
+  if (/underwriting|admin fee|application fee|commitment fee/i.test(L)) { addSum('lenderFlat', amt); return; }
+  if (/processing/i.test(L)) { addSum('processing', amt); return; }
+  if (/appraisal/i.test(L)) { p.fees.appraisal = amt; return; }
+  if (/rent schedule|1007/i.test(L)) { p.fees.rentSchedule = amt; return; }
+  if (/title.*attorney/i.test(L)) { addSum('titleMisc', amt); return; }
+  if (/credit report|verification of employment|flood cert|tax monitoring|tax status|tax service|udm|attorney/i.test(L)) { addSum('creditFees', amt); return; }
+  if (/title.*(deed preparation|notary|tax certificate|guaranty)/i.test(L)) { addSum('titleMisc', amt); return; }
+  if (/endorsement/i.test(L)) { addSum('endorsements', amt); return; }
+  if (/owner'?s title/i.test(L)) { p.fees.ownersOptional = amt; return; }
+  if (/lender'?s title/i.test(L)) { p.lenderTitle = amt; return; }
+  if (/settlement or closing|escrow fee/i.test(L)) { p.fees.escrowFee = amt; return; }
+  if (/survey/i.test(L)) { if (amt > 0) p.fees.survey = amt; return; }
+  if (/recording|transfer tax/i.test(L)) { addSum('recording', amt); return; }
+  if (/hazard insurance premium|homeowner'?s insurance premium/i.test(L)) {
+    const r = rateIn(label);
+    if (r) p.insAnnual = r * 12; else if (amt > 0) p.insAnnual = amt;
+    return;
+  }
+  if (/prepaid interest/i.test(L)) {
+    const m = label.match(/\((\d+)\s*days?/i);
+    if (m) p.fees.prepaidDays = parseInt(m[1], 10);
+    return;
+  }
+  if (/^property taxes/i.test(L)) {
+    const mo = monthsIn(label), r = rateIn(label);
+    if (mo) p.fees.taxEscrowMo = mo;
+    if (r) p.taxMonthly = r;
+    else if (!label.includes('(') && amt > 0 && !p.taxMonthly) p.taxMonthly = amt;
+    return;
+  }
+  if (/hazard insurance reserve/i.test(L)) { const mo = monthsIn(label); if (mo) p.fees.insEscrowMo = mo; return; }
+  if (/mortgage insurance (?:premium|reserve)/i.test(L)) { const r = rateIn(label); if (r > 0) p.miMonthly = r; return; }
+  if (/^mortgage insurance$/i.test(L.trim())) { if (amt > 0) p.miMonthly = amt; return; }
+  if (/^homeowner'?s insurance$/i.test(L.trim())) { if (amt > 0 && !p.insAnnual) p.insAnnual = amt * 12; return; }
+  if (/lender credit/i.test(L)) { if (amt > 0.5) p.lenderCredit = amt; return; }
+  if (/seller credit/i.test(L)) { if (amt > 0.5) p.sellerCredit = amt; return; }
+}
+
+function parseWorksheetLines(lines) {
+  const p = { fees: {}, sums: {} };
+  let m;
+  for (const line of lines) {
+    if ((m = line.match(/purchase price:?\s*\$?\s?([\d,]+(?:\.\d{2})?)/i))) p.price = wsMoney(m[1]);
+    if ((m = line.match(/(?:total )?loan amount:?\s*\$?\s?([\d,]+(?:\.\d{2})?)/i))) p.loan = wsMoney(m[1]);
+    if ((m = line.match(/rate\s*\/\s*apr:?\s*([\d.]+)\s*%/i))) p.rate = parseFloat(m[1]);
+    if ((m = line.match(/product:?\s*(\d+)\s*year\s*([a-z\- ]*?)(?:fixed|arm)/i))) {
+      p.term = parseInt(m[1], 10);
+      const prod = m[2].toLowerCase();
+      p.type = prod.includes('fha') ? 'fha' : prod.includes('va') ? 'va' : prod.includes('jumbo') ? 'jumbo' : 'conv';
+      p.io = /interest only|\bio\b/i.test(line);
+    }
+    if ((m = line.match(/downpayment\/funds from borrower\s*\$?\s?([\d,]+(?:\.\d{2})?)/i))) p.down = wsMoney(m[1]);
+    wsPairsFromLine(line).forEach(pair => { if (pair.label) wsClassifyPair(p, pair.label, pair.amt); });
+  }
+  return p;
+}
+async function handleWorksheetFile(file) {
+  const status = el('wsStatus');
+  status.className = 'prop-status';
+  status.textContent = 'Reading ' + file.name + '…';
+  try {
+    await loadPdfJs();
+    const buf = await file.arrayBuffer();
+    const doc = await window.pdfjsLib.getDocument({ data: buf }).promise;
+    let lines = [];
+    for (let pg = 1; pg <= Math.min(doc.numPages, 4); pg++) {
+      const page = await doc.getPage(pg);
+      lines = lines.concat(pdfLinesFromTextContent(await page.getTextContent()));
+    }
+    const p = parseWorksheetLines(lines);
+    if (!p.price || !p.rate) throw new Error('Could not find a purchase price and rate in this PDF. It may be a scan; this works best with digital fee worksheets.');
+    applyWorksheet(p);
+  } catch (e) {
+    status.className = 'prop-status err';
+    status.textContent = 'Worksheet upload failed. ' + (e && e.message ? e.message : e);
+  } finally {
+    el('wsFile').value = '';
+  }
+}
+
+function applyWorksheet(p) {
+  const F = state.fees;
+  Object.keys(p.sums).forEach(k => { if (k !== 'points' && p.sums[k] > 0) F[k] = Math.round(p.sums[k]); });
+  Object.keys(p.fees).forEach(k => { F[k] = p.fees[k]; });
+
+  // Property numbers (rent is never on a fee worksheet, so it stays put)
+  el('gPrice').value = Math.round(p.price);
+  if (p.insAnnual) el('gInsAnnual').value = Math.round(p.insAnnual);
+  if (p.taxMonthly && p.price) el('gTaxPct').value = Math.round(p.taxMonthly * 12 / p.price * 10000) / 100;
+
+  // The financing, as a new option card
+  const downPct = p.down && p.price ? Math.round(p.down / p.price * 10000) / 100
+    : (p.loan && p.price ? Math.round(Math.max(p.price - p.loan, 0) / p.price * 10000) / 100 : 20);
+  const s = mkScenario('Worksheet ' + p.rate + '%', downPct, p.rate, p.io ? 'io' : (p.term === 40 ? '40' : '30'), 'none');
+  if (p.sums.points > 0 && p.loan) s.points = Math.round(p.sums.points / p.loan * 100 * 1000) / 1000;
+  if (p.lenderCredit) s.lenderCredit = Math.round(p.lenderCredit);
+  if (p.sellerCredit) s.sellerCredit = Math.round(p.sellerCredit);
+
+  if (state.scenarios.length >= 4) state.scenarios[state.scenarios.length - 1] = s;
+  else state.scenarios.push(s);
+
+  buildFeeFields();
+  buildCards();
+  recalc();
+
+  const status = el('wsStatus');
+  status.className = 'prop-status ok';
+  status.textContent = 'Worksheet loaded: ' + fmt$(p.price) + ' purchase · ' + downPct + '% down · ' + p.rate + '%'
+    + (s.points ? ' · ' + s.points + ' pts' : '') + '. Added as the "' + s.name + '" option and updated the property and fees.'
+    + ' Now set the monthly rent (worksheets never include it) and pick the prepay penalty structure on the new card.';
+}
+
+el('wsFile').addEventListener('change', e => {
+  if (e.target.files && e.target.files[0]) handleWorksheetFile(e.target.files[0]);
+});
 
 // When embedded in an iframe (nealpyles.com/dscr), tell the parent our height
 let lastReportedHeight = 0;
