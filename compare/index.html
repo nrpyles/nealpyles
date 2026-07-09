@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Compare Mortgage Loan Options Side by Side | Neal Pyles, Lone Star Financing</title>
+<meta name="description" content="Free mortgage comparison tool. See FHA, VA, conventional, and jumbo loans side by side with real monthly payments, itemized closing costs, and long term wealth charts. Built by Neal Pyles, Senior Loan Officer at Lone Star Financing. NMLS #1929617."/>
+<link rel="canonical" href="https://nealpyles.com/compare/"/>
+<meta property="og:title" content="Compare Mortgage Loan Options Side by Side | Neal Pyles"/>
+<meta property="og:description" content="See every loan option side by side: payment, itemized closing costs, and the wealth you build. Free interactive tool from Neal Pyles."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://nealpyles.com/og.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:url" content="https://nealpyles.com/compare/"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://nealpyles.com/og.jpg"/><link rel="icon" href="/favicon.ico" sizes="48x48"/><link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"/><link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--night:#0b1628;--cream:#f5ead3;--cream-2:#ece0c4;--red:#c0392b;--red-light:#e74c3c;--ink-mute:rgba(245,234,211,.55);--line:rgba(245,234,211,.12);--line-2:rgba(245,234,211,.22)}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--cream);font-family:'Manrope',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.eyebrow{font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red-light)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;letter-spacing:.02em;padding:15px 26px;border-radius:4px;transition:transform .25s,background .25s,border-color .25s}
+.btn-primary{background:var(--red);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);background:var(--red-light)}
+.btn-ghost{border:1px solid var(--line-2);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--red);transform:translateY(-2px)}
+nav{position:sticky;top:0;z-index:50;background:rgba(11,22,40,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.wordmark{font-family:'Archivo Black',sans-serif;font-size:18px;letter-spacing:-.01em}
+.wordmark em{font-style:normal;color:var(--red-light)}
+header.hero{padding:90px 0 70px;position:relative}
+header.hero::before{content:"";position:absolute;top:-10%;right:-15%;width:560px;height:560px;background:radial-gradient(circle,rgba(192,57,43,.16),transparent 60%);pointer-events:none}
+h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(48px,8.5vw,92px);line-height:1.0;letter-spacing:-.02em;margin:16px 0 0;max-width:18ch}
+h1 em{font-style:italic;color:var(--red-light)}
+.lead{font-size:clamp(17px,2.2vw,21px);color:var(--cream-2);max-width:54ch;margin:26px 0 34px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.trust{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:46px;padding-top:28px;border-top:1px solid var(--line)}
+.trust div{font-size:13px;color:var(--ink-mute)}
+.trust strong{display:block;font-family:'Archivo Black',sans-serif;font-size:26px;color:var(--cream);letter-spacing:-.01em}
+section{padding:64px 0;border-top:1px solid var(--line)}
+.snum{font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red-light);margin-bottom:14px}
+h2{font-family:'Archivo Black',sans-serif;font-size:clamp(30px,5vw,46px);text-transform:uppercase;letter-spacing:-.01em;line-height:1}
+h2 em{font-style:normal;color:var(--red-light)}
+.points{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+.points .n{font-family:'Archivo Black',sans-serif;font-size:34px;color:var(--red);line-height:1}
+.points h4{font-size:16px;margin:12px 0 6px}
+.points p{font-size:14px;color:var(--ink-mute)}
+.faq-item{border-bottom:1px solid var(--line);padding:22px 0}
+.faq-item h4{font-size:17px;margin-bottom:8px}
+.faq-item p{font-size:14px;color:var(--cream-2);max-width:70ch}
+.band{background:linear-gradient(135deg,rgba(192,57,43,.16),transparent);border:1px solid var(--line-2);border-radius:8px;padding:48px;margin:64px 0;text-align:center}
+.band h2{margin-bottom:10px}
+.band p{color:var(--cream-2);margin-bottom:26px}
+footer{padding:48px 0 70px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-mute)}
+footer a{color:var(--cream-2)}
+.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:22px}
+.disc{line-height:1.7;max-width:90ch}
+.tool-shell{margin-top:36px;border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:#eef1f6;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.tool-shell iframe{display:block;width:100%;height:3200px;border:0}
+.tool-actions{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:16px;font-size:13px;color:var(--ink-mute)}
+@media(max-width:860px){.points{grid-template-columns:1fr}.band{padding:34px 22px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="wordmark" href="/">Funded by <em>Pyles</em></a>
+  <a class="btn btn-primary" href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener">Apply Now</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Free Tool &mdash; Loan Comparison</div>
+  <h1>Every option, <em>side by side</em></h1>
+  <p class="lead">Rate quotes only tell you one number. This tool shows the whole picture: real monthly payments, every closing cost itemized down to the recording fee, and the wealth each option builds over time. Drag the sliders, change the down payment, and watch everything update live. No login, no email wall, no pressure.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#tool">Use the tool below</a>
+    <a class="btn btn-ghost" href="https://calendly.com/npyles-lonestarfinancing/15" target="_blank" rel="noopener">Book a 15 min call</a>
+  </div>
+  <div class="trust">
+    <div><strong>4</strong>options compared at once</div>
+    <div><strong>Every</strong>closing cost itemized</div>
+    <div><strong>NMLS</strong>#1929617</div>
+    <div><strong>Free</strong>no signup needed</div>
+  </div>
+</div></header>
+
+<section id="tool"><div class="wrap">
+  <div class="snum">The tool</div>
+  <h2>Run your <em>numbers.</em></h2>
+  <div class="tool-shell">
+    <iframe id="toolFrame" src="/compare/tool.html" title="Mortgage loan comparison tool" loading="lazy"></iframe>
+  </div>
+  <div class="tool-actions">
+    <span>Numbers use current Texas title rates and real lender fee schedules. Estimates only, not a Loan Estimate.</span>
+    <a class="btn btn-ghost" href="/compare/tool.html" target="_blank" rel="noopener">Open full screen</a>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="snum">How it works</div>
+  <h2>Three steps to <em>clarity.</em></h2>
+  <div class="points">
+    <div><div class="n">01</div><h4>Set up the property</h4><p>Type in the price, taxes, and HOA, or have me pull them by address on a call. DFW defaults are already loaded.</p></div>
+    <div><div class="n">02</div><h4>Build your options</h4><p>Conventional, FHA, VA, or jumbo. Mortgage insurance, funding fees, and title costs are figured automatically, so there's nothing technical to know.</p></div>
+    <div><div class="n">03</div><h4>See what it means</h4><p>Side by side payments, itemized cash to close, equity growth, and the true net cost of each path over 5 to 30 years.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="snum">Comparison FAQ</div>
+  <h2>Common <em>questions.</em></h2>
+  <div style="max-width:860px;margin-top:30px">
+    <div class="faq-item"><h4>Is FHA or conventional better for me?</h4><p>It depends on your credit, down payment, and how long you'll keep the home. FHA often wins on rate and upfront cash, conventional often wins long term because mortgage insurance drops off. That's exactly the tradeoff this tool shows you in dollars, on your numbers instead of someone's blog post.</p></div>
+    <div class="faq-item"><h4>How accurate are the closing costs?</h4><p>The fee schedule mirrors real Lone Star Financing fee worksheets and Texas promulgated title insurance rates, so the totals land very close to an actual quote. Your official numbers come on a Loan Estimate after you apply.</p></div>
+    <div class="faq-item"><h4>What does this cost and what's the catch?</h4><p>Nothing and there isn't one. No signup, no email required, nothing saved anywhere except your own browser. If the numbers raise questions, I'm one call away.</p></div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="band">
+  <div class="eyebrow">Want a second set of eyes?</div>
+  <h2>Let's review your <em>options</em> together.</h2>
+  <p>Fifteen minutes on a screen share and I'll pull the real property data, dial in live rates, and hand you a clean PDF of the comparison.</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn btn-primary" href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener">Apply now</a>
+    <a class="btn btn-ghost" href="https://calendly.com/npyles-lonestarfinancing/15" target="_blank" rel="noopener">Book a call</a>
+    <a class="btn btn-ghost" href="mailto:npyles@lonestarfinancing.com">Email me</a>
+  </div>
+</div></div>
+
+<section><div class="wrap" style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+  <div style="flex:1;min-width:280px">
+    <div class="snum">About the author</div>
+    <h2 style="font-size:clamp(24px,3.5vw,34px)">Neal <em>Pyles</em></h2>
+    <p style="font-size:14px;color:var(--cream-2);max-width:64ch;margin-top:14px">Neal Pyles is a Senior Loan Officer (NMLS #1929617) with Lone Star Financing, born and raised in DFW and a UNT grad. He has helped Texas buyers since 2017 across conventional, FHA, VA, jumbo, and investment loans, shopping 25+ wholesale lenders on every file. He built this comparison tool so borrowers can see past the rate quote to the full cost of every option.</p>
+    <div style="display:flex;gap:16px;margin-top:14px;font-size:13px">
+      <a href="https://www.instagram.com/nrpyles" target="_blank" rel="noopener" style="color:var(--red-light)">Instagram</a>
+      <a href="https://www.linkedin.com/in/nealpyles/" target="_blank" rel="noopener" style="color:var(--red-light)">LinkedIn</a>
+      <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener" style="color:var(--red-light)">Verify NMLS</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot-links">
+    <a href="/">Home</a><a href="/#rates">Rates</a><a href="/#links">Links</a><a href="/#faq">FAQ</a><a href="/#contact">Contact</a>
+  </div>
+  <p class="disc">Neal Pyles, Senior Loan Officer, NMLS #1929617. Lone Star Financing, a DBA of Crestmark Lending LLC, NMLS #2789535. Equal Housing Opportunity. This is not a commitment to lend. All figures produced by this tool are estimates for discussion, not a Loan Estimate. Rates, terms, and programs subject to change and credit approval. Serving all of Texas.</p>
+</div></footer>
+
+<script>
+window.addEventListener('message', function (e) {
+  if (e.data && e.data.lsfToolHeight) {
+    document.getElementById('toolFrame').style.height = (e.data.lsfToolHeight + 24) + 'px';
+  }
+});
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Loan Comparison Tool","url":"https://nealpyles.com/compare/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Neal Pyles","jobTitle":"Senior Loan Officer","identifier":"NMLS #1929617","sameAs":["https://www.instagram.com/nrpyles","https://www.linkedin.com/in/nealpyles/","https://nealpyles.com/"]},"description":"Compare FHA, VA, conventional, and jumbo mortgage options side by side with itemized closing costs, monthly payment breakdowns, and long term wealth charts."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is FHA or conventional better for me?","acceptedAnswer":{"@type":"Answer","text":"It depends on credit, down payment, and how long you keep the home. FHA often wins on rate and upfront cash while conventional often wins long term because mortgage insurance drops off. The comparison tool shows the tradeoff in dollars on your numbers."}},{"@type":"Question","name":"How accurate are the closing costs in the comparison tool?","acceptedAnswer":{"@type":"Answer","text":"The fee schedule mirrors real Lone Star Financing fee worksheets and Texas promulgated title insurance rates, so totals land very close to an actual quote. Official numbers come on a Loan Estimate after applying."}},{"@type":"Question","name":"What does the comparison tool cost?","acceptedAnswer":{"@type":"Answer","text":"Nothing. No signup or email is required and nothing is saved anywhere except the user's own browser."}}]}
+</script>
+</body>
+</html>
