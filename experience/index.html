@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Funded By Pyles — Texas Home Loans, an Experience</title>
+<meta name="description" content="Texas home loans funded fast. Purchase, refinance, VA, FHA, and investment loans across Texas with Neal Pyles, Senior Loan Officer. Plain talk, real rates, 25+ lenders."/>
+<link rel="canonical" href="https://nealpyles.com/experience/"/>
+<meta property="og:title" content="Funded By Pyles — Texas Home Loans"/>
+<meta property="og:description" content="Plain talk, real rates, 25+ lenders. Purchase, refinance, VA, FHA, and investment loans across Texas."/>
+<meta property="og:image" content="https://nealpyles.com/og.jpg"/>
+<meta property="og:url" content="https://nealpyles.com/experience/"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nealpyles.com/og.jpg"/>
+<link rel="icon" href="/favicon.ico" sizes="48x48"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0b1628; --night-2:#0e1a30; --night-3:#070e1b;
+  --cream:#f5ead3; --cream-2:#ece0c4;
+  --red:#c0392b; --red-light:#e74c3c;
+  --ink-mute:rgba(245,234,211,.55);
+  --line:rgba(245,234,211,.12); --line-2:rgba(245,234,211,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Manrope',sans-serif; background:var(--night); color:var(--cream);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+.mono{font-family:'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;}
+.serif{font-family:'DM Serif Display',serif;}
+.arch{font-family:'Archivo Black',sans-serif;text-transform:uppercase;}
+
+/* liquid glass rim */
+.lg{position:relative;overflow:hidden;background:rgba(11,22,40,.38);
+  backdrop-filter:blur(8px) saturate(140%);-webkit-backdrop-filter:blur(8px) saturate(140%);
+  box-shadow:inset 0 1px 1px rgba(245,234,211,.12);}
+.lg::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.4px;
+  background:linear-gradient(180deg,rgba(245,234,211,.4),rgba(245,234,211,.1) 22%,transparent 45%,transparent 60%,rgba(245,234,211,.12) 80%,rgba(245,234,211,.32));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+
+/* ============ HERO ============ */
+.hero{position:relative;width:100%;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity 1.6s ease;}
+.hero-video.on{opacity:1;}
+.hero-blend{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(11,22,40,.55) 0%,rgba(11,22,40,.15) 26%,rgba(11,22,40,.25) 55%,rgba(11,22,40,.85) 86%,var(--night) 100%);}
+
+/* top masthead */
+.mast{position:relative;z-index:5;padding:26px 24px 0;}
+@media(min-width:768px){.mast{padding:28px 56px 0;}}
+.eyebrow{font-size:11px;color:var(--red-light);margin-bottom:14px;}
+.wordmark{font-family:'Archivo Black',sans-serif;text-transform:uppercase;color:var(--cream);
+  line-height:.86;letter-spacing:-.01em;font-size:clamp(84px,23vw,300px);display:flex;}
+.wordmark .lw{display:inline-block;overflow:hidden;}
+.wordmark .lw span{display:inline-block;transform:translateY(115%);opacity:0;animation:rise .95s cubic-bezier(.16,1,.3,1) forwards;}
+@keyframes rise{to{transform:translateY(0);opacity:1;}}
+
+/* sub-nav row */
+.subnav{display:flex;justify-content:space-between;align-items:flex-start;margin-top:26px;gap:20px;
+  font-size:10.5px;color:var(--ink-mute);}
+.subnav .col-a{width:16%;min-width:74px;line-height:1.85;}
+.subnav .col-a b{color:var(--cream);font-weight:600;display:block;}
+.subnav .arrow{display:none;color:rgba(245,234,211,.3);padding-top:2px;}
+.subnav .col-mid{flex:1;color:rgba(245,234,211,.75);line-height:1.75;max-width:340px;font-size:11px;}
+.subnav .col-links{display:none;text-align:right;line-height:2;}
+.subnav .col-links a{color:rgba(245,234,211,.7);}
+.subnav .col-links a:hover{color:var(--cream);}
+@media(min-width:900px){.subnav .arrow,.subnav .col-links{display:block;}}
+.burger{width:34px;height:24px;display:flex;flex-direction:column;justify-content:center;gap:7px;cursor:pointer;background:none;border:none;flex:none;}
+.burger span{display:block;height:1.6px;width:100%;background:var(--cream);transition:.3s;}
+.burger.open span:nth-child(1){transform:translateY(8.6px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-8.6px) rotate(-45deg);}
+@media(min-width:900px){.burger{display:none;}}
+
+/* mobile menu */
+.mmenu{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(8,14,27,.97);backdrop-filter:blur(14px);
+  padding:96px 28px 40px;transform:translateY(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);}
+.mmenu.open{transform:translateY(0);}
+.mmenu a{display:block;font-size:22px;padding:14px 0;border-bottom:1px solid var(--line);font-family:'DM Serif Display',serif;color:var(--cream);}
+.mmenu a em{font-style:italic;color:var(--red-light);}
+
+/* hero bottom content */
+.hero-body{position:relative;z-index:5;margin-top:auto;padding:0 24px 40px;display:flex;flex-direction:column;gap:30px;}
+@media(min-width:768px){.hero-body{padding:0 56px 46px;}}
+@media(min-width:1024px){.hero-body{flex-direction:row;justify-content:space-between;align-items:flex-end;}}
+.hb-left{max-width:430px;}
+.idx{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.idx b{font-size:12px;} .idx .rule{width:56px;height:1.5px;background:var(--red);}
+.hb-head{font-family:'DM Serif Display',serif;font-weight:400;color:var(--cream);
+  font-size:clamp(40px,6vw,64px);line-height:.98;letter-spacing:-.02em;margin-bottom:18px;}
+.hb-head em{font-style:italic;color:var(--red-light);}
+.hb-desc{font-size:14.5px;line-height:1.65;color:rgba(245,234,211,.72);max-width:330px;margin-bottom:26px;}
+
+/* sliding-panel CTA */
+.cta-slide{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;
+  background:var(--red);border:1px solid var(--red);border-radius:12px;padding:15px 28px;cursor:pointer;
+  font-weight:700;font-size:14px;color:#fff;transition:box-shadow .3s,transform .3s;}
+.cta-slide .panel{position:absolute;inset:0;background:var(--cream);transform:translateX(-101%);
+  transition:transform .6s cubic-bezier(.16,1,.3,1);z-index:0;}
+.cta-slide:hover .panel{transform:translateX(0);}
+.cta-slide span,.cta-slide svg{position:relative;z-index:1;transition:color .35s;}
+.cta-slide:hover span,.cta-slide:hover svg{color:var(--night);}
+.cta-slide:hover{transform:translateY(-2px);box-shadow:0 16px 34px -14px rgba(192,57,43,.6);}
+.cta-slide svg{width:16px;height:16px;}
+
+/* hero right sidebar */
+.hb-right{display:none;}
+@media(min-width:1024px){.hb-right{display:flex;flex-direction:column;align-items:flex-end;gap:20px;text-align:right;}}
+.hr-name{font-family:'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;font-size:11px;font-weight:600;color:var(--cream);}
+.hr-role{font-size:12px;color:rgba(245,234,211,.6);line-height:1.6;margin-top:6px;}
+.hr-stats{display:flex;gap:26px;}
+.hr-stats .lbl{font-family:'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:9.5px;color:var(--ink-mute);}
+.hr-stats .val{font-size:15px;font-weight:700;color:var(--cream);margin-top:3px;}
+.hr-apply{display:inline-flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.14em;
+  text-transform:uppercase;font-size:10px;font-weight:700;color:var(--cream);}
+.hr-apply .circ{width:42px;height:42px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;transition:.3s;}
+.hr-apply:hover .circ{background:var(--red);border-color:var(--red);}
+.hr-apply .circ svg{width:16px;height:16px;}
+
+/* scroll cue */
+.scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:4;display:none;align-items:center;gap:12px;}
+@media(min-width:1024px){.scroll-cue{display:flex;}}
+.scroll-cue .ring{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;}
+.scroll-cue .ring b{width:1.5px;height:14px;background:rgba(245,234,211,.5);animation:bob 1.6s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(-3px);opacity:.4;}50%{transform:translateY(3px);opacity:1;}}
+.scroll-cue .t{font-family:'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;font-size:9.5px;color:var(--ink-mute);font-weight:600;}
+
+/* ============ SECTION 2: EXPLORE ============ */
+.explore{background:var(--night-2);padding:120px 24px 90px;position:relative;z-index:6;}
+@media(min-width:768px){.explore{padding:150px 56px 110px;}}
+.sec-label{font-family:'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;font-size:11px;margin-bottom:44px;display:flex;gap:8px;}
+.sec-label .n{color:var(--red-light);} .sec-label .t{color:var(--cream);font-weight:600;}
+.explore-head{font-family:'DM Serif Display',serif;font-weight:400;color:var(--cream);
+  font-size:clamp(30px,5vw,60px);line-height:1.08;letter-spacing:-.02em;max-width:960px;margin-bottom:52px;}
+.explore-head em{font-style:italic;color:var(--red-light);}
+.pills{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;}
+.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line-2);border-radius:100px;
+  padding:11px 20px;font-size:12px;font-weight:600;letter-spacing:.02em;color:rgba(245,234,211,.85);
+  background:rgba(245,234,211,.03);transition:.28s;cursor:pointer;}
+.pill:hover{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-2px);}
+.pill svg{width:15px;height:15px;}
+.explore-foot{display:flex;justify-content:space-between;margin-top:80px;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;font-size:10px;color:var(--ink-mute);}
+.explore-foot span:last-child{display:none;}
+@media(min-width:768px){.explore-foot span:last-child{display:block;}}
+
+/* ============ SECTION 3: SHOWCASE ============ */
+.showcase{background:var(--night-3);position:relative;z-index:7;overflow:hidden;}
+.sc-head{padding:70px 24px 46px;}
+@media(min-width:768px){.sc-head{padding:96px 56px 56px;}}
+.sc-title{font-family:'DM Serif Display',serif;font-weight:400;color:var(--cream);
+  font-size:clamp(28px,4.6vw,58px);line-height:1.12;letter-spacing:-.02em;max-width:1000px;}
+.sc-title em{font-style:italic;color:var(--red-light);}
+.sc-icons{display:inline-flex;gap:10px;vertical-align:middle;margin:0 10px;transform:translateY(-4px);}
+.sc-icons .ic{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;color:var(--ink-mute);transition:.3s;}
+.sc-icons .ic:hover{background:var(--cream);color:var(--night);border-color:var(--cream);}
+.sc-icons .ic svg{width:20px;height:20px;}
+.sc-tag{margin-top:32px;font-family:'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;
+  font-size:10px;color:var(--ink-mute);line-height:1.9;}
+.sc-tag-pills{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+.sc-tag-pills span{border:1px solid var(--line-2);border-radius:100px;padding:8px 16px;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:9px;color:rgba(245,234,211,.75);}
+
+/* carousel panel */
+.panelwrap{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+@media(min-width:900px){.panelwrap{flex-direction:row;}}
+.pw-left{border-bottom:1px solid var(--line);padding:32px 24px;display:flex;flex-direction:column;
+  min-height:360px;}
+@media(min-width:900px){.pw-left{width:38%;border-bottom:none;border-right:1px solid var(--line);min-height:540px;padding:36px;}}
+.pw-left .stars{color:var(--ink-mute);font-size:18px;letter-spacing:.35em;}
+.pw-stage{flex:1;position:relative;margin:22px 0;border-radius:14px;overflow:hidden;}
+.pw-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.pw-count{font-family:'JetBrains Mono',monospace;letter-spacing:.16em;font-size:11px;color:#8a94a6;}
+.pw-count b{color:var(--cream);}
+.pw-right{flex:1;}
+.pw-top{padding:22px 24px;border-bottom:1px solid var(--line);
+  font-family:'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;font-size:10px;color:var(--ink-mute);
+  display:flex;justify-content:space-between;align-items:center;}
+@media(min-width:900px){.pw-top{padding:26px 36px;}}
+.pw-top .chap{color:var(--cream);}
+.plist{list-style:none;}
+.pitem{border-bottom:1px solid var(--line);padding:26px 24px;display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;color:#43506a;transition:color .3s;}
+@media(min-width:900px){.pitem{padding:30px 36px;}}
+.pitem:hover{color:#9aa6bd;}
+.pitem.active{color:var(--cream);}
+.pitem .nm{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,34px);letter-spacing:-.01em;}
+.pitem .go{opacity:0;transition:opacity .3s;color:var(--ink-mute);}
+.pitem.active .go{opacity:1;}
+.pitem .go svg{width:22px;height:22px;}
+.sc-foot{border-top:1px solid var(--line);padding:26px 24px;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;font-size:10px;color:var(--ink-mute);}
+@media(min-width:768px){.sc-foot{padding:30px 56px;}}
+.credit{opacity:.5;font-size:10px;margin-top:8px;text-transform:none;letter-spacing:.02em;}
+.credit a{text-decoration:underline;}
+
+/* reveal on scroll */
+.fu{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1);}
+.fu.in{opacity:1;transform:none;}
+
+@media(prefers-reduced-motion:reduce){
+  .wordmark .lw span{animation:none;transform:none;opacity:1;}
+  .fu{opacity:1;transform:none;}
+  .hero-video{opacity:1;transition:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- mobile menu -->
+<div class="mmenu" id="mmenu">
+  <a href="https://nealpyles.com/">Home</a>
+  <a href="#programs">Programs</a>
+  <a href="https://nealpyles.com/#rates">Today's <em>Rates</em></a>
+  <a href="https://nealpyles.com/#about">About</a>
+  <a href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener">Apply <em>Now</em></a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <video class="hero-video" id="heroVid" autoplay loop muted playsinline poster="/hero-poster.jpg">
+    <source src="/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-blend"></div>
+
+  <div class="mast">
+    <div class="eyebrow mono">Funded By Pyles &nbsp;/&nbsp; Texas Mortgage</div>
+    <div class="wordmark" id="wordmark" aria-label="PYLES"></div>
+
+    <div class="subnav">
+      <div class="col-a mono"><b>Texas</b><b>Mortgage</b><b>Advisor</b></div>
+      <div class="arrow">&#8594;</div>
+      <div class="col-mid mono">Guiding Texans home with plain talk, real rates, and 25+ lenders working for you.</div>
+      <div class="arrow">&#8594;</div>
+      <div class="col-links mono">
+        <a href="#programs">Programs</a><br>
+        <a href="https://nealpyles.com/#rates">Rates</a><br>
+        <a href="https://nealpyles.com/#about">About</a><br>
+        <a href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener">Apply</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hb-left fu">
+      <div class="idx"><b class="mono">01</b><span class="rule"></span></div>
+      <h1 class="hb-head">Texas home<br>loans, <em>funded fast.</em></h1>
+      <p class="hb-desc">From your first set of keys to your next investment. Purchase, refinance, or invest anywhere in Texas.</p>
+      <a href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener" class="cta-slide">
+        <span class="panel"></span><span>Start Now</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hb-right fu">
+      <div>
+        <div class="hr-name">Neal Pyles</div>
+        <div class="hr-role">Senior Loan Officer<br>NMLS #1929617 &middot; Frisco, TX</div>
+      </div>
+      <div class="hr-stats">
+        <div><div class="lbl">Lenders</div><div class="val">25+</div></div>
+        <div><div class="lbl">Lending since</div><div class="val">2017</div></div>
+      </div>
+      <a href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener" class="hr-apply">
+        Apply now
+        <span class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <div class="ring"><b></b></div>
+    <div class="t">Scroll to explore</div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: EXPLORE ============ -->
+<section class="explore" id="programs">
+  <div class="sec-label fu"><span class="n">[ 02 ]</span><span class="t">Explore Our Programs</span></div>
+  <h2 class="explore-head fu">Every path home, and every deal after, funded the <em>Texas way.</em></h2>
+  <div class="pills fu">
+    <a class="pill" href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Purchase</a>
+    <a class="pill" href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>Refinance</a>
+    <a class="pill" href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 .8-4.5 4.2 1.2 6L12 16l-5.9 3 1.2-6L3 8.8 9 8z"/></svg>VA Loans</a>
+    <a class="pill" href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V7l9-4 9 4v14"/><path d="M9 21v-6h6v6"/></svg>FHA / First Time</a>
+    <a class="pill" href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M6 21V9l6-4 6 4v12"/><path d="M9 13h.01M12 13h.01M15 13h.01"/></svg>Investment</a>
+    <a class="pill" href="https://closercap.com/neal/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3"/></svg>Business</a>
+  </div>
+  <div class="explore-foot fu">
+    <span>We don't just quote rates.</span>
+    <span>Funded By Pyles &copy; 2026</span>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: SHOWCASE ============ -->
+<section class="showcase">
+  <div class="sc-head">
+    <h2 class="sc-title fu">Built from years of Texas closings
+      <span class="sc-icons">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M12 12v8M9 16h6"/></svg></span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 6 6 .8-4.5 4.2 1.2 6L12 16l-5.9 3 1.2-6L3 8.8 9 8z"/></svg></span>
+      </span>
+      &amp; <em>real relationships.</em></h2>
+    <div class="sc-tag fu">We don't just fund loans<br>we fund Texas futures.</div>
+    <div class="sc-tag-pills fu"><span>Fast</span><span>Honest</span><span>Local</span></div>
+  </div>
+
+  <div class="panelwrap">
+    <div class="pw-left">
+      <div class="stars">&#42;&#42;&#42;</div>
+      <div class="pw-stage" id="stage">
+        <img id="imgA" src="/exp/prog1.jpg" alt="Loan program">
+        <img id="imgB" src="/exp/prog2.jpg" alt="" style="opacity:0">
+      </div>
+      <div class="pw-count"><b id="cnum">01</b> / 05</div>
+    </div>
+    <div class="pw-right">
+      <div class="pw-top">
+        <span>Pick your path. Get funded.</span>
+        <span class="chap" id="chaplabel">Program 01</span>
+      </div>
+      <ul class="plist" id="plist">
+        <li class="pitem active" data-i="0"><span class="nm">Purchase Loans</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></li>
+        <li class="pitem" data-i="1"><span class="nm">Refinance</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></li>
+        <li class="pitem" data-i="2"><span class="nm">VA Loans</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></li>
+        <li class="pitem" data-i="3"><span class="nm">FHA / First Time</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></li>
+        <li class="pitem" data-i="4"><span class="nm">Investment &amp; DSCR</span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sc-foot">
+    Funding Texas, one close at a time.
+    <div class="credit">Dallas skyline: photo by Matthew T Rader, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</div>
+  </div>
+</section>
+
+<!-- sand dissolve filter -->
+<svg width="0" height="0" style="position:absolute"><defs>
+  <filter id="sand"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" stitchTiles="stitch" result="n"/>
+  <feDisplacementMap id="disp" in="SourceGraphic" in2="n" scale="0" xChannelSelector="R" yChannelSelector="G"/></filter>
+</defs></svg>
+
+<script>
+/* wordmark rise */
+(function(){
+  var el=document.getElementById('wordmark'); if(!el) return;
+  var word='PYLES'.split('');
+  word.forEach(function(c,i){
+    var wrap=document.createElement('span'); wrap.className='lw';
+    var s=document.createElement('span'); s.textContent=c;
+    s.style.animationDelay=(120+i*90)+'ms';
+    wrap.appendChild(s); el.appendChild(wrap);
+  });
+})();
+
+/* delayed video reveal */
+setTimeout(function(){var v=document.getElementById('heroVid'); if(v){v.classList.add('on'); v.play&&v.play().catch(function(){});}},900);
+
+/* hero fade-ups (timed) */
+window.addEventListener('load',function(){
+  var l=document.querySelector('.hb-left'), r=document.querySelector('.hb-right');
+  setTimeout(function(){l&&l.classList.add('in');},700);
+  setTimeout(function(){r&&r.classList.add('in');},950);
+});
+
+/* scroll reveal for sections */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+document.querySelectorAll('.explore .fu,.showcase .fu').forEach(function(n){io.observe(n);});
+
+/* mobile menu */
+var burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu');
+burger.addEventListener('click',function(){burger.classList.toggle('open');mmenu.classList.toggle('open');});
+mmenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){burger.classList.remove('open');mmenu.classList.remove('open');});});
+
+/* ===== program carousel with sand dissolve ===== */
+(function(){
+  var imgs=['/exp/prog1.jpg','/exp/prog2.jpg','/exp/prog3.jpg','/exp/prog4.jpg','/exp/prog5.jpg'];
+  var A=document.getElementById('imgA'),B=document.getElementById('imgB'),disp=document.getElementById('disp');
+  var cnum=document.getElementById('cnum'),chap=document.getElementById('chaplabel');
+  var items=[].slice.call(document.querySelectorAll('.pitem'));
+  var cur=0,busy=false,timer=null,top=A;
+  function ease(t){return 1-Math.pow(1-t,3);}
+  function pad(n){return (n<10?'0':'')+n;}
+  function show(next){
+    if(busy||next===cur) {return;}
+    busy=true;
+    var incoming=(top===A)?B:A, outgoing=top;
+    incoming.src=imgs[next];
+    incoming.style.opacity='0';
+    incoming.style.filter='url(#sand)';
+    var start=null,DUR=900;
+    function frame(ts){
+      if(!start) start=ts;
+      var t=Math.min(1,(ts-start)/DUR), e=ease(t);
+      disp.setAttribute('scale',(130*(1-e)).toFixed(1));
+      incoming.style.opacity=e.toFixed(3);
+      outgoing.style.opacity=(1-e).toFixed(3);
+      if(t<1){requestAnimationFrame(frame);}
+      else{incoming.style.filter='none';outgoing.style.opacity='0';top=incoming;busy=false;}
+    }
+    requestAnimationFrame(frame);
+    // update ui
+    items.forEach(function(it,i){it.classList.toggle('active',i===next);});
+    cnum.textContent=pad(next+1); chap.textContent='Program '+pad(next+1);
+    cur=next;
+  }
+  items.forEach(function(it){it.addEventListener('click',function(){resetTimer();show(parseInt(it.dataset.i,10));});});
+  function tick(){show((cur+1)%imgs.length);}
+  function resetTimer(){clearInterval(timer);timer=setInterval(tick,4200);}
+  // start autoplay only when showcase in view
+  var scio=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){resetTimer();}else{clearInterval(timer);}
+  });},{threshold:.25});
+  scio.observe(document.querySelector('.showcase'));
+})();
+</script>
+</body>
+</html>
