@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>Compare Mortgage Loan Options Side by Side | Neal Pyles, Lone Star Financing</title>
 <meta name="description" content="Free mortgage comparison tool. See FHA, VA, conventional, and jumbo loans side by side with real monthly payments, itemized closing costs, and long term wealth charts. Built by Neal Pyles, Senior Loan Officer at Lone Star Financing. NMLS #1929617."/>
 <link rel="canonical" href="https://nealpyles.com/compare/"/>
@@ -10,9 +10,9 @@
 <meta property="og:description" content="See every loan option side by side: payment, itemized closing costs, and the wealth you build. Free interactive tool from Neal Pyles."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://nealpyles.com/og.jpg"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:url" content="https://nealpyles.com/compare/"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://nealpyles.com/og.jpg"/><link rel="icon" href="/favicon.ico" sizes="48x48"/><link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png"/><link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--night:#0b1628;--cream:#f5ead3;--cream-2:#ece0c4;--red:#c0392b;--red-light:#e74c3c;--ink-mute:rgba(245,234,211,.55);--line:rgba(245,234,211,.12);--line-2:rgba(245,234,211,.22)}
@@ -72,17 +72,15 @@ footer a{color:var(--cream-2)}
   section{padding:48px 0}
 }
 </style>
-</head>
-<body>
-<nav><div class="wrap">
-  <a class="wordmark" href="/">Funded by <em>Pyles</em></a>
-  <a class="btn btn-primary" href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener">Apply Now</a>
-</div></nav>
+<link rel="stylesheet" href="/assets/site.css"><script src="/assets/site.js" defer></script>
+<link rel="stylesheet" href="/assets/mortgage-comparison.css"><script src="/assets/calculator-storage.js"></script></head>
+<body class="site-page comparison-page">
+<header class="site-header"><a class="site-brand" href="/" aria-label="Funded By Pyles home"><img src="/assets/texas-home-logo.png" width="58" height="50" alt="Funded By Pyles Texas home loan logo"><span>FUNDED BY <b>PYLES</b></span></a><button class="site-menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button><nav id="site-navigation" aria-label="Main navigation"><a href="/programs/">Loan programs</a><a href="/compare/">Compare loans</a><a href="/rates/">Rate watch</a><a href="/experience/">Meet Neal</a><a href="#quick-intake">Get in touch</a><a class="site-apply" href="https://nealpyles.my1003app.com/1929617/register" target="_blank" rel="noopener">Apply now</a></nav></header><main>
 
 <header class="hero"><div class="wrap">
   <div class="eyebrow">Free Tool &mdash; Loan Comparison</div>
   <h1>Every option, <em>side by side</em></h1>
-  <p class="lead">Rate quotes only tell you one number. This tool shows the whole picture: real monthly payments, every closing cost itemized down to the recording fee, and the wealth each option builds over time. Drag the sliders, change the down payment, and watch everything update live. No login, no email wall, no pressure.</p>
+  <p class="lead">Compare monthly payments, estimated cash to close, and the long-term costs of your mortgage options. Start with the sample scenarios, then edit the numbers to fit your plans.</p>
   <div class="cta-row">
     <a class="btn btn-primary" href="#tool">Use the tool below</a>
     <a class="btn btn-ghost" href="https://calendly.com/npyles-lonestarfinancing/15" target="_blank" rel="noopener">Book a 15 min call</a>
@@ -99,10 +97,177 @@ footer a{color:var(--cream-2)}
   <div class="snum">The tool</div>
   <h2>Run your <em>numbers.</em></h2>
   <div class="tool-shell">
-    <iframe id="toolFrame" src="/compare/tool.html" title="Mortgage loan comparison tool" loading="lazy" scrolling="no"></iframe>
+    <!-- NATIVE CALCULATOR START --><div class="mortgage-calculator site-calculator">
+<div class="wrap">
+
+  <header>
+    <div class="brand-block">
+      <span class="logo-chip"><img src="/assets/texas-home-logo.png" alt="Lone Star Financing"></span>
+      <div>
+        <h2 id="titleText">Every option, <em>side by side.</em></h2>
+        <div class="sub">Payment, full closing costs, and long term wealth for each path. Everything updates as you type.</div>
+      </div>
+    </div>
+    <details class="print-branding"><summary>Personalize your printable comparison</summary><div class="brand-fields">
+      <input id="brandName" placeholder="Prepared by (your name)">
+      <input id="brandNmls" placeholder="NMLS #">
+      <input id="brandPhone" placeholder="Phone">
+      <input id="clientName" placeholder="Prepared for (client name)">
+    </div></details>
+    <div class="toolbar">
+      <button class="btn" onclick="window.print()">Print / Save PDF</button>
+      <button class="btn ghost" onclick="resetAll()">Reset</button>
+    </div>
+  </header>
+  <div id="printSheet" class="print-only"></div>
+
+  <!-- ============ Step 1: Property ============ -->
+  <p class="calculator-example-note">Example scenarios — edit the assumptions to match your situation. Rates in this calculator are sample inputs, not live quotes.</p><div class="step" id="stepProperty">
+    <div class="snum">01 — The Property <small>look it up, type the numbers in, or upload a fee worksheet</small></div>
+    <div class="panel">
+      <div class="lookup-row">
+        <input id="propAddr" class="addr" placeholder="Property address:  Street, City, State, Zip" autocomplete="street-address" autocapitalize="words" enterkeyhint="search">
+        <button class="btn" id="lookupBtn" onclick="lookupProperty()">Look up property</button>
+        <button class="btn" id="applyBtn" onclick="applyProperty()" style="display:none">Use this property</button>
+        <button class="btn ghost" onclick="el('wsFile').click()">Upload fee worksheet</button>
+        <input type="file" id="wsFile" accept="application/pdf,.pdf" style="display:none">
+      </div>
+      <div class="prop-status" id="wsStatus"></div>
+      <div class="prop-status" id="propStatus"></div>
+      <div class="prop-chips" id="propChips"></div>
+
+      <div class="prop-fields">
+        <div class="g-field">
+          <label>Property taxes / yr (% or $)</label>
+          <div class="g-pair">
+            <input id="gTaxPct" type="number" step="0.1" value="1.26" title="Percent of the price per year">
+            <input id="gTaxAmt" type="number" step="100" title="Dollars per year">
+          </div>
+        </div>
+        <div class="g-field">
+          <label>Home insurance / yr</label>
+          <input id="gInsAnnual" type="number" step="100" value="3600">
+        </div>
+        <div class="g-field">
+          <label>HOA dues / mo</label>
+          <input id="gHoa" type="number" step="10" value="0">
+        </div>
+        <div class="g-field">
+          <label>Home appreciation / yr</label>
+          <input id="gApprec" type="number" step="0.5" value="3.5">
+        </div>
+        <div class="g-field">
+          <label>Compare over</label>
+          <select id="gHorizon">
+            <option value="5">5 years</option>
+            <option value="7" selected>7 years</option>
+            <option value="10">10 years</option>
+            <option value="15">15 years</option>
+            <option value="30">30 years</option>
+          </select>
+        </div>
+        <div class="g-field">
+          <label>Current rent / mo (optional)</label>
+          <input id="gRent" type="number" step="50" value="2200">
+        </div>
+        <div class="g-field">
+          <label>Rent increase / yr</label>
+          <input id="gRentInc" type="number" step="0.5" value="3">
+        </div>
+      </div>
+
+      <details class="settings">
+        <summary>Data connection settings</summary>
+        <div class="inner">
+          <div class="g-field" style="flex:1; min-width:260px;">
+            <label>RentCast API key</label>
+            <input id="apiKey" class="wide" type="password" placeholder="Paste your API key">
+          </div>
+          <div class="hint" style="max-width:420px;">
+            Pulls value, taxes, and HOA dues straight from public records for 140+ million US properties.
+            Get a free key at rentcast.io/api, then activate the free Developer plan on their billing page.
+            The key is saved only in this browser. No key? Just type the numbers in by hand.
+          </div>
+        </div>
+      </details>
+      <details class="settings" id="feeSettings">
+        <summary>Fees and title details (title premiums always track each option's price and loan automatically)</summary>
+        <div class="inner" id="feeFields"></div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ============ Step 2: Options ============ -->
+  <div class="step" id="stepOptions">
+    <div class="snum">02 — The Loan Options <small>mortgage insurance, fees, and title costs are figured automatically</small></div>
+    <div class="scenario-tabs" role="tablist" aria-label="Choose a loan option to edit"></div><div class="cards" id="cards"></div>
+  </div>
+
+  <!-- ============ Step 3: Results ============ -->
+  <div class="step">
+    <div class="snum">03 — What It Means</div>
+    <div class="callouts" id="callouts"></div>
+
+    <h2 class="sec">The numbers, <em>side by side.</em></h2>
+    <p class="comparison-swipe-hint">On your phone, swipe the table to compare all options.</p><div class="tablewrap"><table class="cmp" id="cmpTable"></table></div>
+
+    <details class="fold">
+      <summary>See every closing fee, itemized</summary>
+      <div class="tablewrap"><table class="cmp" id="closeTable"></table></div>
+    </details>
+
+    <h2 class="sec">See it <em>over time.</em></h2>
+    <div class="charts">
+      <div class="chartcard">
+        <h3>Monthly Payment Breakdown</h3>
+        <div class="desc">What makes up each payment: principal and interest, mortgage insurance, taxes, home insurance, HOA</div>
+        <canvas id="chPayment"></canvas>
+        <div class="legend" id="legPayment"></div>
+      </div>
+      <div class="chartcard">
+        <h3>Loan Balance Over Time</h3>
+        <div class="desc">How fast each option pays down what you owe</div>
+        <canvas id="chBalance"></canvas>
+        <div class="legend" id="legLines1"></div>
+      </div>
+      <div class="chartcard">
+        <h3>Your Equity Over Time</h3>
+        <div class="desc">Home value growth plus principal paid. This is wealth you own.</div>
+        <canvas id="chEquity"></canvas>
+        <div class="legend" id="legLines2"></div>
+      </div>
+      <div class="chartcard">
+        <h3>True Net Cost Over Time</h3>
+        <div class="desc">Everything paid out, minus the equity you gained. Lower is better. Renting is shown for contrast.</div>
+        <canvas id="chNetCost"></canvas>
+        <div class="legend" id="legLines3"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="printFaq" class="print-only">
+    <h2 class="sec">Questions people <em>always ask.</em></h2>
+    <div class="faq-grid">
+      <div class="faq-q"><h4>Are these my final numbers?</h4><p>No, they are careful estimates built from real lender fee schedules and current Texas title rates so you can plan with confidence. Your official numbers arrive on a Loan Estimate within 3 business days of applying.</p></div>
+      <div class="faq-q"><h4>What exactly is "cash to close"?</h4><p>Everything you bring to the closing table: your down payment, lender and title fees, the first year of home insurance, prepaid interest, and the escrow account deposits, minus any seller or lender credits.</p></div>
+      <div class="faq-q"><h4>Do I pay mortgage insurance forever?</h4><p>On a conventional loan it drops off automatically once you reach 22% equity, and you can request removal at 20%. FHA mortgage insurance runs 11 years with 10% or more down, otherwise for the life of the loan, which is why many FHA buyers refinance later. VA loans never have monthly mortgage insurance.</p></div>
+      <div class="faq-q"><h4>Why can the lowest payment still cost more?</h4><p>A lower rate or smaller down payment can hide costs that show up later: mortgage insurance, financed fees, and slower equity. The "true net cost" line adds up everything you pay and subtracts the equity you build, so different paths compare fairly.</p></div>
+      <div class="faq-q"><h4>Which option should I pick?</h4><p>It depends on how long you plan to stay, how much cash you want to keep in reserve, and your monthly comfort zone. The break even callouts on page 1 show when paying more upfront starts winning. Fifteen minutes on the phone and we will land on the right one together.</p></div>
+      <div class="faq-q"><h4>What happens next?</h4><p>Reach out and we will verify your numbers, lock a rate when you are ready, and close in as fast as 18 to 25 days. Call or text (469) 734-6352, or apply at nealpyles.com.</p></div>
+    </div>
+  </div>
+
+  <footer id="footerText">
+    <div class="company">Neal Pyles · Senior Loan Officer · NMLS #1929617 · Lone Star Financing, a DBA of Crestmark Lending LLC, NMLS #2789535 · Equal Housing Opportunity</div>
+    Estimates for discussion only, not a loan offer, a Loan Estimate, or a commitment to lend. Rates, fees, mortgage insurance, taxes, insurance, and closing costs are estimates and will vary by lender, title company, and property. Mortgage insurance uses typical published rate ranges and your actual quote depends on credit and other factors. Title premiums use the Texas promulgated rates effective March 1, 2026 and recompute automatically from each option's price and loan amount when Texas auto mode is selected. Property data is provided by public records via RentCast and may be outdated or incomplete. FHA figures include upfront mortgage insurance financed into the loan. VA figures include the funding fee financed into the loan unless marked exempt. Appreciation is not guaranteed. Please verify all figures with your loan officer and title company.
+  </footer>
+</div>
+
+
+</div><!-- NATIVE CALCULATOR END -->
   </div>
   <div class="tool-actions">
-    <span>Numbers use current Texas title rates and real lender fee schedules. Estimates only, not a Loan Estimate.</span>
+    <span>Edit the sample rates, costs, and assumptions for your situation. Estimates only, not a Loan Estimate.</span>
     <a class="btn btn-ghost" href="/compare/tool.html" target="_blank" rel="noopener">Open full screen</a>
   </div>
 </div></section>
@@ -151,25 +316,14 @@ footer a{color:var(--cream-2)}
   </div>
 </div></section>
 
-<footer><div class="wrap">
-  <div class="foot-links">
-    <a href="/">Home</a><a href="/dscr/">DSCR Tool</a><a href="/#rates">Rates</a><a href="/#links">Links</a><a href="/#faq">FAQ</a><a href="/#contact">Contact</a>
-  </div>
-  <p class="disc">Neal Pyles, Senior Loan Officer, NMLS #1929617. Lone Star Financing, a DBA of Crestmark Lending LLC, NMLS #2789535. Equal Housing Opportunity. This is not a commitment to lend. All figures produced by this tool are estimates for discussion, not a Loan Estimate. Rates, terms, and programs subject to change and credit approval. Serving all of Texas.</p>
-</div></footer>
+<section class="site-section quick-intake" id="quick-intake" aria-labelledby="intake-title"><div class="site-container intake-layout"><div><p class="site-kicker">A quick introduction</p><h2 id="intake-title">Let's find your<br><em>way home.</em></h2><p>Tell me a little about your plans. I’ll help you understand your loan options and next steps.</p><a class="site-email" href="mailto:npyles@lonestarfinancing.com?subject=Help%20with%20my%20Texas%20mortgage">npyles@lonestarfinancing.com</a><p class="intake-note">Prefer to talk? <a href="https://calendly.com/npyles-lonestarfinancing/15" target="_blank" rel="noopener">Book a 15 minute call.</a></p></div><form class="site-intake-form" action="https://formsubmit.co/npyles@lonestarfinancing.com" method="POST"><input type="hidden" name="_subject" value="New mortgage inquiry — Funded By Pyles"><input type="hidden" name="_template" value="table"><div class="form-honeypot" aria-hidden="true"><label>Leave this field empty<input name="_honey" tabindex="-1" autocomplete="off"></label></div><div class="intake-fields"><label>Your name<input name="name" autocomplete="name" maxlength="120" required></label><label>Email address<input name="email" type="email" autocomplete="email" maxlength="254" required></label><label>Phone <span>(optional)</span><input name="phone" type="tel" autocomplete="tel" maxlength="40"></label><label>Your goal<select name="goal" required><option value="">Choose your goal</option><option>Buy a home</option><option>Refinance my home</option><option>Finance an investment</option><option>Explore my options</option></select></label><label>Timeline<select name="timeline"><option>Just exploring</option><option>Within 30 days</option><option>1–3 months</option><option>3–6 months</option><option>6+ months</option></select></label><label>City or ZIP <span>(optional)</span><input name="location" autocomplete="address-level2" maxlength="120"></label><label class="intake-message">Anything you'd like me to know? <span>(optional)</span><textarea name="message" rows="3" maxlength="2000" placeholder="Your plans, questions, or ideal monthly payment"></textarea></label></div><p class="intake-note">By sending this request, you’re asking Neal to contact you about your mortgage. Please leave out Social Security numbers, account numbers, and financial documents.</p><button class="site-button" type="submit">Send my request <span aria-hidden="true">↗</span></button><p class="intake-status" role="status" aria-live="polite"></p></form></div></section></main><footer class="site-footer"><div class="site-container"><div class="site-footer-top"><div><a class="site-brand" href="/"><img src="/assets/texas-home-logo.png" width="58" height="50" alt=""><span>FUNDED BY <b>PYLES</b></span></a><p>Neal Pyles · Senior Loan Officer<br>NMLS #1929617 · Frisco, Texas</p></div><div><p class="site-kicker">Stay connected</p><div class="site-socials"><a href="https://www.instagram.com/nrpyles" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.linkedin.com/in/nealpyles/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.facebook.com/PylesMortgage/" target="_blank" rel="noopener">Facebook ↗</a></div><a class="site-email" href="mailto:npyles@lonestarfinancing.com?subject=Help%20with%20my%20Texas%20mortgage">npyles@lonestarfinancing.com</a></div></div><div class="site-footer-links"><a href="/programs/">All loan programs</a><a href="/compare/">Compare home loans</a><a href="/dscr-calculator/">DSCR calculator</a><a href="/rates/">Rate watch</a><a href="/texas/">Texas communities</a><a href="/experience/">Meet Neal</a><a href="https://www.lonestarfinancing.com/" target="_blank" rel="noopener">Lone Star Financing ↗</a><a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access ↗</a></div><p>© 2026 Funded By Pyles. Lone Star Financing, a DBA of Crestmark Lending LLC, NMLS #2789535. Equal Housing Opportunity. All loans subject to credit approval and program eligibility. Calculator results are estimates, not a commitment to lend or a Loan Estimate.</p></div></footer>
 
-<script>
-window.addEventListener('message', function (e) {
-  if (e.data && e.data.lsfToolHeight) {
-    document.getElementById('toolFrame').style.height = (e.data.lsfToolHeight + 24) + 'px';
-  }
-});
-</script>
+
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Loan Comparison Tool","url":"https://nealpyles.com/compare/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Neal Pyles","jobTitle":"Senior Loan Officer","identifier":"NMLS #1929617","sameAs":["https://www.instagram.com/nrpyles","https://www.linkedin.com/in/nealpyles/","https://nealpyles.com/"]},"description":"Compare FHA, VA, conventional, and jumbo mortgage options side by side with itemized closing costs, monthly payment breakdowns, and long term wealth charts."}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is FHA or conventional better for me?","acceptedAnswer":{"@type":"Answer","text":"It depends on credit, down payment, and how long you keep the home. FHA often wins on rate and upfront cash while conventional often wins long term because mortgage insurance drops off. The comparison tool shows the tradeoff in dollars on your numbers."}},{"@type":"Question","name":"How accurate are the closing costs in the comparison tool?","acceptedAnswer":{"@type":"Answer","text":"The fee schedule mirrors real Lone Star Financing fee worksheets and Texas promulgated title insurance rates, so totals land very close to an actual quote. Official numbers come on a Loan Estimate after applying."}},{"@type":"Question","name":"What does the comparison tool cost?","acceptedAnswer":{"@type":"Answer","text":"Nothing. No signup or email is required and nothing is saved anywhere except the user's own browser."}}]}
 </script>
-</body>
+<script src="/assets/mortgage-comparison.js"></script><script src="/assets/calculator-accessibility.js"></script><script src="/assets/comparison-mobile.js"></script></body>
 </html>

@@ -1,0 +1,1083 @@
+[
+  {
+    "slug": "conventional",
+    "name": "Conventional loans",
+    "group": "Buy a home",
+    "source": "https://lonestarfinancing.com/conventional-home-loans/",
+    "lead": "Flexible financing for your first home, next home, or an eligible investment property. Compare fixed-rate and adjustable-rate choices with a plan for your down payment and monthly budget.",
+    "benefits": [
+      [
+        "A flexible starting point",
+        "Lone Star Financing offers fixed-rate and adjustable-rate conventional options. The right structure depends on your payment goals and how long you expect to keep the loan."
+      ],
+      [
+        "Low down payment options",
+        "Some qualified purchase borrowers may be eligible for 3%\u20135% down. Occupancy, loan type, credit, and underwriting determine what is available."
+      ],
+      [
+        "Understand mortgage insurance",
+        "A 20% down payment generally avoids private mortgage insurance. With less down, compare the cost of PMI and the requirements for eventual cancellation."
+      ]
+    ],
+    "consider": [
+      "Your credit, income, existing debts, and available funds are reviewed together.",
+      "Conforming loan limits change annually; higher loan amounts may require jumbo financing.",
+      "Primary homes, second homes, and investment properties can have different down payment and pricing requirements."
+    ],
+    "docs": [
+      "Income and employment information",
+      "Available down payment and closing funds",
+      "Purchase price, location, and intended occupancy"
+    ],
+    "faq": [
+      [
+        "Is a conventional loan only for first-time buyers?",
+        "No. Conventional financing can serve first-time and repeat buyers, subject to the property and loan requirements."
+      ],
+      [
+        "Can I buy with less than 20% down?",
+        "Some eligible buyers can. We will compare the down payment, PMI, payment, and overall cost rather than looking at the down payment alone."
+      ],
+      [
+        "How do I know whether I need a jumbo loan?",
+        "We will compare your loan amount with the applicable conforming limit and review jumbo options if needed."
+      ]
+    ],
+    "related": [
+      "fha",
+      "jumbo",
+      "down-payment-assistance"
+    ],
+    "tag": "Flexible home financing",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "fha",
+    "name": "FHA loans",
+    "group": "Buy a home",
+    "source": "https://lonestarfinancing.com/fha-home-loans/",
+    "lead": "A government-insured mortgage option for eligible buyers who want a smaller down payment and flexible qualification. FHA can work for a first home or your next primary residence.",
+    "benefits": [
+      [
+        "As low as 3.5% down",
+        "Lone Star Financing describes FHA purchase options with down payments as low as 3.5% for qualifying borrowers. Credit and other requirements still apply."
+      ],
+      [
+        "More than a first-home program",
+        "You do not have to be a first-time buyer to explore FHA financing. The home generally needs to be your primary residence."
+      ],
+      [
+        "Help with upfront funds",
+        "Gift funds and eligible down payment assistance may be options. We will review the documentation, assistance terms, and total cash to close."
+      ]
+    ],
+    "consider": [
+      "FHA loans include mortgage insurance, which affects both upfront cost and the monthly payment.",
+      "Loan limits vary by county and property size.",
+      "Property condition, occupancy, credit, and debt-to-income requirements are part of the review."
+    ],
+    "docs": [
+      "Income, debts, and credit information",
+      "Down payment funds or gift details",
+      "Property location and intended occupancy"
+    ],
+    "faq": [
+      [
+        "Do I need to be a first-time homebuyer?",
+        "No. FHA financing can be available to eligible repeat buyers as well as first-time buyers."
+      ],
+      [
+        "Is 3.5% down all the cash I need?",
+        "Not necessarily. Closing costs, prepaid expenses, and reserves may add to your cash needs. We will review the full estimate."
+      ],
+      [
+        "Can FHA be combined with assistance?",
+        "Some assistance programs can be combined with FHA, subject to availability, income, location, and other program rules."
+      ]
+    ],
+    "related": [
+      "conventional",
+      "down-payment-assistance",
+      "fha-streamline"
+    ],
+    "tag": "Low down payment options",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "va",
+    "name": "VA loans",
+    "group": "Buy a home",
+    "source": "https://lonestarfinancing.com/va-home-loans/",
+    "lead": "Home financing for eligible veterans, active-duty service members, and certain surviving spouses. Explore purchase options with no required down payment in qualifying situations and no monthly mortgage insurance.",
+    "benefits": [
+      [
+        "Put your VA benefit to work",
+        "A Certificate of Eligibility helps establish your available benefit. Service history, entitlement, and lender underwriting are all part of qualifying."
+      ],
+      [
+        "Eligible zero-down purchases",
+        "Lone Star Financing offers VA financing with zero down for eligible borrowers. Entitlement, appraisal, loan amount, and the property can affect the funds needed."
+      ],
+      [
+        "No monthly PMI",
+        "VA loans do not require monthly private mortgage insurance. A VA funding fee may apply unless you qualify for an exemption."
+      ]
+    ],
+    "consider": [
+      "Zero down does not automatically mean zero cash to close.",
+      "VA financing is generally for an eligible primary residence.",
+      "We will review entitlement, the funding fee or exemption, credit, income, and property eligibility."
+    ],
+    "docs": [
+      "Certificate of Eligibility or service information",
+      "Income and available closing funds",
+      "Property details and existing VA loan information, if applicable"
+    ],
+    "faq": [
+      [
+        "Can I use a VA loan more than once?",
+        "Eligible borrowers may be able to use their benefit again. Available entitlement and any existing VA loans need to be reviewed."
+      ],
+      [
+        "Will I pay mortgage insurance?",
+        "VA loans do not require monthly PMI. The funding fee and closing costs are separate items to review."
+      ],
+      [
+        "What if I already have a VA loan?",
+        "A VA IRRRL may be an option for an eligible existing VA loan. We can also compare other refinance choices."
+      ]
+    ],
+    "related": [
+      "va-irrrl",
+      "refinance",
+      "conventional"
+    ],
+    "tag": "For eligible military borrowers",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "jumbo",
+    "name": "Jumbo loans",
+    "group": "Buy a home",
+    "source": "https://lonestarfinancing.com/jumbo-loans/",
+    "lead": "Financing for a loan amount above the applicable conforming limit. Explore a higher-value home purchase or refinance with a careful review of credit, cash reserves, and your full financial picture.",
+    "benefits": [
+      [
+        "Room for a larger loan",
+        "Lone Star Financing advertises jumbo options up to $3 million for qualifying scenarios. Available loan amounts depend on the lender, property, and borrower profile."
+      ],
+      [
+        "Purchase or refinance",
+        "Jumbo programs can support eligible purchases and refinances. Occupancy and property type influence the options and terms."
+      ],
+      [
+        "Compare loan structures",
+        "Explore fixed-rate and adjustable-rate choices, including eligible traditional and non-QM structures. Compare the initial payment and any future adjustment risk."
+      ]
+    ],
+    "consider": [
+      "Jumbo underwriting can require stronger credit and additional cash reserves.",
+      "Down payment and debt-to-income requirements vary by loan amount and program.",
+      "The conforming limit changes annually; we will check the current limit before selecting a program."
+    ],
+    "docs": [
+      "Income and asset documentation",
+      "Available down payment and cash reserves",
+      "Loan amount, property type, and occupancy"
+    ],
+    "faq": [
+      [
+        "What makes a mortgage jumbo?",
+        "A jumbo mortgage exceeds the applicable conforming loan limit. We will verify the limit that applies to your scenario."
+      ],
+      [
+        "Is 20% down always required?",
+        "Not every program has the same requirement. Your profile, property, and loan amount determine the available options."
+      ],
+      [
+        "Can a self-employed buyer explore jumbo financing?",
+        "Yes. Traditional and some non-QM documentation approaches may be available, subject to underwriting."
+      ]
+    ],
+    "related": [
+      "conventional",
+      "non-qm",
+      "refinance"
+    ],
+    "tag": "Higher-value home financing",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "usda",
+    "name": "USDA loans",
+    "group": "Buy a home",
+    "source": "https://lonestarfinancing.com/usda-home-loans/",
+    "lead": "Zero-down financing for eligible households buying an eligible rural or suburban primary residence. The location of the home and household income are key starting points.",
+    "benefits": [
+      [
+        "Check the address first",
+        "USDA eligibility is based on the property location. Some communities outside major Texas cities may qualify; an address check is essential."
+      ],
+      [
+        "Qualified zero-down purchases",
+        "Eligible borrowers can explore 100% purchase financing. Closing costs and prepaid expenses still need to be considered."
+      ],
+      [
+        "Income eligibility matters",
+        "Household income limits and repayment requirements apply. We will review the household, property, and your overall qualifications together."
+      ]
+    ],
+    "consider": [
+      "USDA eligibility is not determined by the city name alone.",
+      "Household income limits vary by area and household size.",
+      "Program guarantee fees, closing costs, credit, and occupancy requirements still apply."
+    ],
+    "docs": [
+      "Property address",
+      "Household size and income information",
+      "Employment, debts, and funds available for closing"
+    ],
+    "faq": [
+      [
+        "Does every rural home qualify?",
+        "No. The specific address and the property must meet USDA eligibility requirements."
+      ],
+      [
+        "Is USDA only for first-time buyers?",
+        "First-time status is not the only qualifying factor. Property, income, occupancy, and underwriting requirements determine eligibility."
+      ],
+      [
+        "Does zero down mean no closing costs?",
+        "No. We will review the fees, prepaid expenses, and any permitted credits or assistance separately."
+      ]
+    ],
+    "related": [
+      "fha",
+      "conventional",
+      "down-payment-assistance"
+    ],
+    "tag": "Eligible rural and suburban homes",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "non-qm",
+    "name": "Non-QM & bank statement loans",
+    "group": "Specialty financing",
+    "source": "https://lonestarfinancing.com/non-qm-loan-texas/",
+    "lead": "Mortgage options for borrowers whose income or financial situation does not fit a traditional documentation path. Explore alternatives for self-employed buyers, business owners, and other eligible complex scenarios.",
+    "benefits": [
+      [
+        "Alternative income documentation",
+        "Lone Star Financing lists personal and business bank statement, 1099, and asset-based loan options. The documentation route depends on your scenario."
+      ],
+      [
+        "A broader financial review",
+        "Non-QM programs can consider income and assets differently from standard programs. They still require a review of your qualifications and ability to repay."
+      ],
+      [
+        "Specialty property or borrower needs",
+        "The published offering also includes eligible foreign-national, interest-only, and non-warrantable condo scenarios. Program availability varies."
+      ]
+    ],
+    "consider": [
+      "Alternative documentation does not mean automatic approval or no documentation.",
+      "Rates, fees, down payments, and reserves may differ from traditional loans.",
+      "We should compare a conventional option as well if your documentation supports one."
+    ],
+    "docs": [
+      "How your income is earned",
+      "Bank statement, 1099, or asset details for discussion",
+      "Property type, down payment, and cash reserves"
+    ],
+    "faq": [
+      [
+        "Are bank statement loans for self-employed borrowers?",
+        "They can be an option for eligible self-employed borrowers whose tax returns do not fully reflect the income used for qualification."
+      ],
+      [
+        "Is non-QM the same as a DSCR loan?",
+        "DSCR is one investor-focused approach within the broader non-QM market. Owner-occupied bank statement financing uses a different review."
+      ],
+      [
+        "Do I still need credit and assets reviewed?",
+        "Yes. The lender reviews credit, available funds, property, and the applicable documentation requirements."
+      ]
+    ],
+    "related": [
+      "conventional",
+      "jumbo",
+      "dscr"
+    ],
+    "tag": "For complex income situations",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "refinance",
+    "name": "Mortgage refinance",
+    "group": "Refinance & equity",
+    "source": "https://lonestarfinancing.com/mortgage-refinance/",
+    "lead": "Make your existing mortgage fit your next goal. Compare a rate-and-term refinance, a shorter loan term, mortgage-insurance changes, or an eligible equity solution with the costs and savings in view.",
+    "benefits": [
+      [
+        "Start with the reason",
+        "A refinance might change your payment, loan term, interest structure, or loan program. A lower payment and a lower total cost are not always the same thing."
+      ],
+      [
+        "Review your break-even point",
+        "Compare closing costs with the expected savings and how long you plan to keep the loan. Refinance savings depend on the actual new terms."
+      ],
+      [
+        "Choose the right path",
+        "Lone Star Financing lists conventional refinance, cash-out, VA IRRRL, and FHA Streamline options. Home-equity loans and HELOCs may be alternatives to replacing your mortgage."
+      ]
+    ],
+    "consider": [
+      "Closing costs can offset the benefit of a lower rate.",
+      "Restarting a longer loan term can increase total interest, even if the payment drops.",
+      "The current loan type, equity, credit, and property affect your choices."
+    ],
+    "docs": [
+      "Current mortgage statement and loan type",
+      "Estimated home value and remaining balance",
+      "Your goal and expected time in the home"
+    ],
+    "faq": [
+      [
+        "Should I refinance just because rates drop?",
+        "We should compare the savings, fees, new term, and how long you expect to keep the loan before deciding."
+      ],
+      [
+        "Can I refinance to remove mortgage insurance?",
+        "It may be possible with qualifying equity and an appropriate loan program. Compare that option with the insurance rules on your current loan."
+      ],
+      [
+        "Do I have to replace my first mortgage to access equity?",
+        "Not always. An eligible HELOC or home-equity loan may preserve your first mortgage; the complete cost needs to be compared."
+      ]
+    ],
+    "related": [
+      "cash-out",
+      "va-irrrl",
+      "fha-streamline",
+      "heloc"
+    ],
+    "tag": "A mortgage that fits your next goal",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "cash-out",
+    "name": "Texas cash-out refinance",
+    "group": "Refinance & equity",
+    "source": "https://lonestarfinancing.com/cash-out-refinance/",
+    "lead": "Replace your existing mortgage with an eligible new loan and access part of your home\u2019s equity at closing. Compare the new mortgage payment with your goal for the funds and the alternatives.",
+    "benefits": [
+      [
+        "Equity as a lump sum",
+        "A cash-out refinance can provide funds for renovations or other major goals. It also replaces your existing mortgage, so the new rate and term matter."
+      ],
+      [
+        "Texas-specific rules",
+        "For eligible Texas home-equity cash-out transactions, the combined borrowing is generally limited to 80% of the home\u2019s value. Existing liens and transaction rules need to be reviewed."
+      ],
+      [
+        "Compare before consolidating",
+        "Moving debt into a mortgage can change the payment and repayment period. Debt secured by your home introduces risk and should be evaluated carefully."
+      ]
+    ],
+    "consider": [
+      "You will have closing costs and a new mortgage structure.",
+      "Texas home-equity rules, waiting periods, and lien requirements can affect eligibility.",
+      "Available cash is based on value, existing loan balances, costs, and the approved loan amount."
+    ],
+    "docs": [
+      "Current mortgage and any other liens",
+      "Home value and the amount of cash needed",
+      "Purpose of the funds and repayment goals"
+    ],
+    "faq": [
+      [
+        "Will a cash-out refinance replace my current loan?",
+        "Yes. It generally pays off the existing mortgage and creates a new one, with eligible cash proceeds at closing."
+      ],
+      [
+        "Can I borrow all of my equity?",
+        "No. Loan-to-value limits, current balances, and closing costs determine the amount potentially available."
+      ],
+      [
+        "What if I want to keep my first mortgage rate?",
+        "We can compare a HELOC or home-equity loan, subject to eligibility, with the complete cash-out refinance cost."
+      ]
+    ],
+    "related": [
+      "heloc",
+      "home-equity",
+      "refinance"
+    ],
+    "tag": "Access equity with a new mortgage",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "heloc",
+    "name": "Texas HELOC loans",
+    "group": "Refinance & equity",
+    "source": "https://lonestarfinancing.com/texas-heloc/",
+    "lead": "An eligible home-equity line of credit gives you access to funds as you need them while keeping your existing first mortgage. Understand the draw period, payment changes, and Texas requirements before choosing a line.",
+    "benefits": [
+      [
+        "Draw as needed",
+        "A HELOC is a revolving credit line rather than a single lump-sum payout. The amount drawn influences the interest and repayment obligations."
+      ],
+      [
+        "Keep the first mortgage",
+        "An eligible HELOC can sit alongside your existing mortgage. Compare the total payment, fees, and lien structure rather than focusing only on the first mortgage rate."
+      ],
+      [
+        "Review variable-rate risk",
+        "Many lines have a variable interest rate. Lone Star Financing also describes fixed-rate lock features on some options; availability and terms need to be confirmed."
+      ]
+    ],
+    "consider": [
+      "Texas home-equity transactions generally limit combined borrowing to 80% of the home\u2019s value.",
+      "Payments can change when rates change or when the repayment period begins.",
+      "Your home secures the debt, and Texas-specific occupancy and lien rules apply."
+    ],
+    "docs": [
+      "Existing mortgage balance and home value",
+      "Amount and timing of the funds needed",
+      "Credit, income, and other liens"
+    ],
+    "faq": [
+      [
+        "Is a HELOC a one-time lump sum?",
+        "No. A HELOC normally allows eligible draws against an approved line during the draw period."
+      ],
+      [
+        "Will the payment stay the same?",
+        "Not necessarily. The balance, rate, and transition from drawing to repayment can change the payment."
+      ],
+      [
+        "Can a HELOC preserve my first mortgage?",
+        "An eligible HELOC may allow that. We will compare the combined payment and costs with other equity options."
+      ]
+    ],
+    "related": [
+      "home-equity",
+      "cash-out",
+      "refinance"
+    ],
+    "tag": "Flexible access to home equity",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "home-equity",
+    "name": "Texas home-equity loans",
+    "group": "Refinance & equity",
+    "source": "https://lonestarfinancing.com/home-equity-loans-texas/",
+    "lead": "Explore a one-time lump sum backed by eligible equity in your Texas home. A fixed-rate home-equity loan can offer a defined repayment schedule while preserving your existing first mortgage in an eligible structure.",
+    "benefits": [
+      [
+        "One-time funding",
+        "A home-equity loan provides a lump sum at closing rather than a revolving line. It can be appropriate when the amount and timing of your expense are known."
+      ],
+      [
+        "Predictable repayment",
+        "Lone Star Financing describes fixed-rate home-equity options with a defined payment schedule. The actual payment and term depend on the approved structure."
+      ],
+      [
+        "Compare all the liens",
+        "We will review the first mortgage, any existing equity debt, and the new borrowing together to assess the total monthly commitment."
+      ]
+    ],
+    "consider": [
+      "Texas home-equity rules generally limit combined borrowing to 80% of the home\u2019s value.",
+      "Closing costs, lien requirements, and timing rules can affect the transaction.",
+      "Using your home as collateral introduces repayment risk even when the payment is fixed."
+    ],
+    "docs": [
+      "Current mortgage and home value",
+      "Existing liens and amount of funds needed",
+      "Income, credit, and repayment budget"
+    ],
+    "faq": [
+      [
+        "How is it different from a HELOC?",
+        "A home-equity loan provides a lump sum with a set repayment structure. A HELOC offers eligible draws from a line of credit."
+      ],
+      [
+        "Does it replace my first mortgage?",
+        "It may be structured as an additional loan rather than replacing the first mortgage. We will confirm the applicable structure."
+      ],
+      [
+        "How much can I borrow?",
+        "That depends on the home\u2019s value, existing loan balances, Texas limits, lender requirements, and your qualifications."
+      ]
+    ],
+    "related": [
+      "heloc",
+      "cash-out",
+      "refinance"
+    ],
+    "tag": "A lump sum and defined repayment",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "va-irrrl",
+    "name": "VA IRRRL refinance",
+    "group": "Refinance & equity",
+    "source": "https://lonestarfinancing.com/va-irrrl-refinance-texas/",
+    "lead": "A streamlined refinance path for an eligible existing VA mortgage. Explore whether changing the rate or moving from an adjustable to a fixed-rate structure provides the required benefit for your situation.",
+    "benefits": [
+      [
+        "For an existing VA loan",
+        "An IRRRL is a VA-to-VA refinance option. Your current loan, payment history, and transaction requirements need to be reviewed."
+      ],
+      [
+        "A streamlined review",
+        "Lone Star Financing describes reduced documentation and no new appraisal in many eligible cases. Requirements can vary by lender and scenario."
+      ],
+      [
+        "Focus on the benefit",
+        "Compare costs, the rate, the term, and the measurable benefit. A simpler process is still a new financial commitment."
+      ]
+    ],
+    "consider": [
+      "An existing VA loan is required for an IRRRL.",
+      "Loan seasoning, payment history, benefit, and recoupment requirements can apply.",
+      "This is a rate-and-term path rather than a general cash-out program."
+    ],
+    "docs": [
+      "Current VA mortgage statement",
+      "Payment history and original loan details",
+      "Your goal for the rate, payment, or interest structure"
+    ],
+    "faq": [
+      [
+        "Do I need an existing VA mortgage?",
+        "Yes. The IRRRL is designed to refinance an eligible existing VA loan."
+      ],
+      [
+        "Will I need an appraisal?",
+        "An appraisal is often not required in eligible cases, but lender and transaction requirements must be confirmed."
+      ],
+      [
+        "Can I take cash out through an IRRRL?",
+        "An IRRRL is not the standard cash-out route. We should discuss a different eligible program for that goal."
+      ]
+    ],
+    "related": [
+      "va",
+      "refinance",
+      "cash-out"
+    ],
+    "tag": "For eligible existing VA mortgages",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "fha-streamline",
+    "name": "FHA Streamline refinance",
+    "group": "Refinance & equity",
+    "source": "https://lonestarfinancing.com/fha-streamline-refinance/",
+    "lead": "An eligible FHA-to-FHA refinance with a simplified review. We will check your current FHA mortgage, payment history, and whether the proposed loan provides the required net tangible benefit.",
+    "benefits": [
+      [
+        "An FHA-to-FHA option",
+        "This program is for eligible borrowers with an existing FHA-insured mortgage. It is not the route for converting a conventional loan to FHA."
+      ],
+      [
+        "Potentially less paperwork",
+        "Lone Star Financing describes reduced income documentation and no new appraisal in many cases. The transaction still has eligibility requirements and costs."
+      ],
+      [
+        "Review insurance and fees",
+        "FHA mortgage insurance, closing costs, and the new payment should be compared together when evaluating the benefit."
+      ]
+    ],
+    "consider": [
+      "Existing FHA loan, seasoning, payment history, and benefit requirements apply.",
+      "A streamlined review is not an automatic approval or a no-cost refinance.",
+      "Mortgage insurance and the new loan term remain part of the cost comparison."
+    ],
+    "docs": [
+      "Current FHA mortgage statement",
+      "Loan date and payment history",
+      "New-payment goal and closing funds"
+    ],
+    "faq": [
+      [
+        "Can any homeowner use FHA Streamline?",
+        "No. It is for an eligible existing FHA-insured mortgage."
+      ],
+      [
+        "Is a benefit required?",
+        "Yes. The refinance must satisfy the applicable net tangible benefit requirements."
+      ],
+      [
+        "Does streamlined mean no closing costs?",
+        "No. We will review actual costs, any lender credits, and the proposed new terms."
+      ]
+    ],
+    "related": [
+      "fha",
+      "refinance",
+      "conventional"
+    ],
+    "tag": "For eligible existing FHA mortgages",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "down-payment-assistance",
+    "name": "Down payment assistance",
+    "group": "Buy a home",
+    "source": "https://lonestarfinancing.com/fha-home-loans/down-payment-assistance/",
+    "lead": "Explore assistance that may help eligible Texas buyers with their down payment or closing costs. Program availability, household income, location, and repayment terms all matter.",
+    "benefits": [
+      [
+        "Several forms of assistance",
+        "Lone Star Financing describes grants, forgivable loans, and deferred-payment second liens. Each form has different conditions and obligations."
+      ],
+      [
+        "Eligibility comes first",
+        "Assistance may depend on income, property location, occupancy, purchase price, and sometimes first-time buyer status. Available funding can change."
+      ],
+      [
+        "Compare the full package",
+        "We will review the mortgage rate, any second lien, forgiveness conditions, and repayment triggers along with the amount of upfront assistance."
+      ]
+    ],
+    "consider": [
+      "Assistance is not always free money or automatically forgiven.",
+      "Some programs require education courses or have occupancy requirements.",
+      "Selling, refinancing, or moving may trigger repayment or affect forgiveness."
+    ],
+    "docs": [
+      "Household income and household size",
+      "Property location and target purchase price",
+      "Homeownership history and available funds"
+    ],
+    "faq": [
+      [
+        "Is every assistance program a grant?",
+        "No. Programs can include grants, deferred loans, forgivable loans, or other second-lien structures."
+      ],
+      [
+        "Do I have to be a first-time buyer?",
+        "Some programs require it and others may serve repeat buyers. We will check the actual program rules."
+      ],
+      [
+        "Can assistance help with closing costs?",
+        "Some programs permit that, subject to eligible expenses, funding availability, and other requirements."
+      ]
+    ],
+    "related": [
+      "fha",
+      "conventional",
+      "usda"
+    ],
+    "tag": "Help with eligible upfront costs",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "commercial",
+    "name": "Commercial real estate loans",
+    "group": "Specialty financing",
+    "source": "https://lonestarfinancing.com/texas-commercial-loans/",
+    "lead": "Property-focused financing for eligible Texas commercial acquisitions, refinances, or development plans. Share the asset, its income, and the project so we can discuss the appropriate commercial lending path.",
+    "benefits": [
+      [
+        "Match financing to the property",
+        "Lone Star Financing lists multifamily, retail, office, industrial, and hospitality financing. The asset type and business plan shape underwriting."
+      ],
+      [
+        "Plan for the transaction",
+        "Published options include acquisition, refinance, bridge, construction, and eligible SBA-backed structures. Different paths address different timing and repayment needs."
+      ],
+      [
+        "Review the deal economics",
+        "Property income, expenses, occupancy, leases, ownership, borrower experience, and the exit plan can all influence the available terms."
+      ]
+    ],
+    "consider": [
+      "Commercial loan structures differ from a standard home mortgage.",
+      "Loan amount, leverage, amortization, term, recourse, and prepayment terms vary by property and lender.",
+      "Construction and bridge financing require a clear project or exit plan."
+    ],
+    "docs": [
+      "Property type, location, and purchase or refinance amount",
+      "Rent roll, leases, and operating income and expenses",
+      "Ownership, experience, cash available, and project plan"
+    ],
+    "faq": [
+      [
+        "Is a commercial loan the same as a DSCR rental loan?",
+        "No. A residential DSCR loan and a commercial real estate loan may evaluate different property types and structures."
+      ],
+      [
+        "Can I discuss a purchase or a refinance?",
+        "Both are listed in Lone Star Financing\u2019s commercial offering. We will review the property and transaction."
+      ],
+      [
+        "What should I bring to a first discussion?",
+        "Start with the property, requested amount, current income and expenses, ownership, and the project timeline."
+      ]
+    ],
+    "related": [
+      "dscr",
+      "non-qm",
+      "jumbo"
+    ],
+    "tag": "For property and business projects",
+    "provider": "Lone Star Financing",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "dscr",
+    "name": "DSCR investment loans",
+    "group": "Specialty financing",
+    "source": "https://crestmarklending.com/dscr-loans/",
+    "lead": "Rental-property financing through Crestmark Lending, based primarily on the property\u2019s cash flow rather than traditional personal-income qualification. Explore eligible purchases, refinances, entity ownership, and specialized investor scenarios.",
+    "benefits": [
+      [
+        "Rental income, not traditional DTI",
+        "Crestmark describes DSCR programs that qualify primarily using property rental income, without traditional personal tax return, W-2, or employment-income review. Credit, assets, the property, and program documents still matter."
+      ],
+      [
+        "Program-specific coverage",
+        "Crestmark publishes typical DSCR baselines of 1.00\u20131.20 or higher, with selected lower-coverage options. A lower ratio can mean reduced leverage, stronger reserves, or different pricing."
+      ],
+      [
+        "Eligible investor structures",
+        "Published options include qualifying purchases up to 80% loan-to-value, long- and short-term rentals, and LLC or entity ownership. The available leverage and terms depend on the property and program."
+      ]
+    ],
+    "consider": [
+      "Crestmark publishes program-specific minimum credit scores generally ranging from 620 to 660 or higher. Stronger credit can affect pricing and leverage.",
+      "Short-term rent, multifamily units, interest-only structures, and lower DSCR cases can require specialized review.",
+      "Compare reserves, cash to close, prepayment penalties, and your expected holding period before selecting a loan."
+    ],
+    "docs": [
+      "Leases or a market rent schedule; rent rolls for multifamily properties",
+      "Property appraisal, taxes, insurance, and HOA costs",
+      "Credit, reserves, operating statements, and entity documents where applicable"
+    ],
+    "faq": [
+      [
+        "How is DSCR calculated?",
+        "Crestmark illustrates monthly qualifying rent divided by the applicable monthly PITIA payment: principal, interest, taxes, insurance, and association costs. For example, $2,500 divided by $2,000 is 1.25. The selected program determines the exact accepted income and payment."
+      ],
+      [
+        "Does every DSCR loan require a ratio of 1.00?",
+        "No. Crestmark describes selected lower-coverage programs as well as standard and stronger-coverage ranges. Credit, loan-to-value, reserves, property type, and lender requirements determine the options."
+      ],
+      [
+        "Can I close in an LLC?",
+        "Crestmark publishes LLC and entity-compatible programs. Entity documents and, typically, a personal guarantee still need review. Entity ownership does not automatically eliminate personal obligations."
+      ]
+    ],
+    "related": [
+      "commercial",
+      "non-qm",
+      "conventional"
+    ],
+    "tag": "Rental-property financing",
+    "provider": "Crestmark Lending",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "dscr-refinance",
+    "name": "DSCR rental-property refinance",
+    "group": "Specialty financing",
+    "source": "https://crestmarklending.com/dscr-loans/refinance/",
+    "tag": "Refinance an investment property",
+    "lead": "Review a rate-and-term or cash-out refinance for an eligible rental property through Crestmark Lending. Compare the property\u2019s qualifying rent, the new debt payment, existing loan terms, and your next investment goal.",
+    "benefits": [
+      [
+        "Improve the financing structure",
+        "A rate-and-term DSCR refinance may change the rate, term, or payment on a rental loan. Compare savings with costs and the planned holding period."
+      ],
+      [
+        "Explore rental-property cash-out",
+        "Crestmark offers eligible cash-out refinance options for investor equity access. Value, existing debt, leverage, cash flow, and program requirements determine the funds potentially available."
+      ],
+      [
+        "Refinance entity-held property",
+        "LLC-compatible structures are among the published options. Review title, guarantees, documents, and the chosen lender\u2019s requirements."
+      ]
+    ],
+    "consider": [
+      "Check the existing loan\u2019s prepayment penalty and payoff amount.",
+      "Compare costs and the new total payment, not just the interest rate.",
+      "Investor cash-out guidelines differ from Texas owner-occupied home-equity rules."
+    ],
+    "docs": [
+      "Current loan, payoff, and any prepayment terms",
+      "Rent, property value, taxes, insurance, and HOA costs",
+      "Requested cash-out, reserves, and entity documents"
+    ],
+    "faq": [
+      [
+        "Can I take cash out of an investment property?",
+        "Crestmark lists cash-out DSCR refinance options. Available proceeds depend on the selected program, property value, debt, and underwriting."
+      ],
+      [
+        "Do I need traditional income qualification?",
+        "Crestmark describes a rental-income-based review instead of traditional personal-income DTI qualification. Property, credit, assets, and other documents still matter."
+      ],
+      [
+        "Should I refinance if the rate is lower?",
+        "Review costs, any payoff penalty, cash flow, new term, and your investment plan. A rate reduction alone does not establish a benefit."
+      ]
+    ],
+    "related": [
+      "dscr",
+      "dscr-llc",
+      "dscr-jumbo"
+    ],
+    "provider": "Crestmark Lending",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "dscr-multifamily",
+    "name": "Multifamily DSCR loans",
+    "group": "Specialty financing",
+    "source": "https://crestmarklending.com/dscr-loans/multifamily/",
+    "tag": "For eligible small multifamily rentals",
+    "lead": "Explore Crestmark Lending\u2019s financing for eligible 2\u20134 unit rentals and selected 5\u20138 unit multifamily properties. Compare the building\u2019s rent, cash flow, and financing structure for a purchase or refinance.",
+    "benefits": [
+      [
+        "Evaluate the whole building",
+        "Rent rolls, leases, occupancy, expenses, and the appraisal help establish the property\u2019s qualifying income and value."
+      ],
+      [
+        "Match the unit count to a program",
+        "Crestmark lists duplex, triplex, fourplex, and selected small multifamily options. Five or more units can require a different lending structure."
+      ],
+      [
+        "Purchase or refinance",
+        "Published programs support eligible acquisitions and refinances. Review loan term, reserves, guarantees, and any prepayment provisions."
+      ]
+    ],
+    "consider": [
+      "Unit count and property classification influence the available programs.",
+      "Operating statements and a rent roll may be required for larger properties.",
+      "Vacancy, condition, income documentation, and borrower experience can affect underwriting."
+    ],
+    "docs": [
+      "Unit count, rent roll, leases, and occupancy",
+      "Operating income, expenses, and property condition",
+      "Purchase or refinance amount, ownership, and investment plan"
+    ],
+    "faq": [
+      [
+        "Can I finance more than four units?",
+        "Crestmark advertises selected programs for 5\u20138 unit buildings as well as 2\u20134 unit properties. Availability depends on the building and underwriting."
+      ],
+      [
+        "Is a personal guarantee still possible?",
+        "Yes. Property-income qualification and entity ownership do not automatically remove personal guarantee requirements."
+      ],
+      [
+        "Can I use the program for a refinance?",
+        "Crestmark lists purchase and refinance uses. The building\u2019s income, current debt, and proposed structure need review."
+      ]
+    ],
+    "related": [
+      "dscr",
+      "commercial",
+      "dscr-refinance"
+    ],
+    "provider": "Crestmark Lending",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "dscr-rehab",
+    "name": "DSCR renovation & rehab loans",
+    "group": "Specialty financing",
+    "source": "https://crestmarklending.com/dscr-loans/renovation-rehab/",
+    "tag": "For value-add rental projects",
+    "lead": "Explore Crestmark Lending\u2019s financing paths for eligible rental-property renovation, rehab, and BRRRR strategies. Review the scope, budget, rent assumptions, and planned transition to longer-term financing.",
+    "benefits": [
+      [
+        "Plan the project first",
+        "Share the acquisition cost, renovation scope, contractor or budget details, and the expected property condition after the work."
+      ],
+      [
+        "Review acquisition and improvement funding",
+        "Crestmark describes eligible financing that can address purchase and renovation costs. Funding structure, draws, and eligible work depend on the lender and project."
+      ],
+      [
+        "Build an exit plan",
+        "Some projects move into longer-term DSCR financing after renovation and stabilization. That future refinance requires its own eligibility and cost review."
+      ]
+    ],
+    "consider": [
+      "Projected rents or after-improvement value are not automatically accepted.",
+      "Draw schedules, reserves, timelines, and permitted work need to be confirmed.",
+      "A planned refinance is not guaranteed; model costs and alternatives if the exit changes."
+    ],
+    "docs": [
+      "Purchase price, scope of work, and renovation budget",
+      "Current rent and supported post-renovation rent assumptions",
+      "Timeline, contractor details, reserves, and exit strategy"
+    ],
+    "faq": [
+      [
+        "Can renovation costs be financed?",
+        "Crestmark describes eligible acquisition-and-renovation options. The allowed costs and funding process are program-specific."
+      ],
+      [
+        "Is this a fit for a BRRRR strategy?",
+        "Crestmark lists BRRRR and value-add scenarios. The acquisition, rehab, rental, and refinance stages all need a viable plan."
+      ],
+      [
+        "Will projected rental income qualify?",
+        "Some programs may consider supported projected rent. The appraisal, project, and selected lender determine what is acceptable."
+      ]
+    ],
+    "related": [
+      "dscr",
+      "dscr-refinance",
+      "dscr-multifamily"
+    ],
+    "provider": "Crestmark Lending",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "dscr-jumbo",
+    "name": "Jumbo DSCR loans",
+    "group": "Specialty financing",
+    "source": "https://crestmarklending.com/dscr-loans/jumbo/",
+    "tag": "Higher-balance rental financing",
+    "lead": "Explore higher-balance financing for eligible investment properties through Crestmark Lending. Rental income, property value, liquidity, and the loan structure all matter when financing a larger asset.",
+    "benefits": [
+      [
+        "Finance a higher-value rental",
+        "Crestmark lists high-balance DSCR options for luxury rentals, larger investment assets, and selected portfolio scenarios. Maximum amounts vary by program."
+      ],
+      [
+        "Review cash flow and liquidity",
+        "Larger loans may require additional reserves, stronger credit, or different leverage. The property\u2019s qualifying rent is part of the review."
+      ],
+      [
+        "Compare available structures",
+        "Published options include fixed-rate, adjustable-rate, and eligible interest-only structures. Compare the initial payment, future changes, and exit costs."
+      ]
+    ],
+    "consider": [
+      "A lender\u2019s published maximum is not an approved amount for every property.",
+      "Higher balances can have different leverage, reserve, and property requirements.",
+      "Review prepayment provisions and the risk of rate or payment changes."
+    ],
+    "docs": [
+      "Property value, loan amount, and rental income",
+      "Liquidity, reserves, down payment, and current debt",
+      "Property type, ownership, holding period, and exit plan"
+    ],
+    "faq": [
+      [
+        "How much can I borrow?",
+        "Crestmark lists several high-balance ranges across its programs. We will confirm the applicable maximum and available amount for your specific property rather than use a blanket cap."
+      ],
+      [
+        "Is jumbo DSCR the same as a homebuyer jumbo loan?",
+        "No. Jumbo DSCR is investor-oriented property-income financing. An owner-occupied jumbo loan uses a different qualification path."
+      ],
+      [
+        "Are interest-only options available?",
+        "Crestmark lists eligible interest-only options. The term, later payment changes, and qualification requirements need to be reviewed."
+      ]
+    ],
+    "related": [
+      "dscr",
+      "dscr-multifamily",
+      "dscr-refinance"
+    ],
+    "provider": "Crestmark Lending",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  },
+  {
+    "slug": "dscr-llc",
+    "name": "LLC & entity DSCR loans",
+    "group": "Specialty financing",
+    "source": "https://crestmarklending.com/dscr-loans/llc/",
+    "tag": "For entity-held investment property",
+    "lead": "Review Crestmark Lending\u2019s DSCR financing for eligible LLC-owned rental properties. Coordinate the property\u2019s cash flow, entity documents, title, and guarantee requirements with your investment plan.",
+    "benefits": [
+      [
+        "Entity-compatible financing",
+        "Crestmark lists loans that can close in an eligible LLC or business entity for qualifying business-purpose rental properties."
+      ],
+      [
+        "Rental-income-based review",
+        "The property\u2019s qualifying income is central to the review. Credit, liquidity, ownership, and the lender\u2019s entity rules still matter."
+      ],
+      [
+        "Purchase, refinance, or scale",
+        "Published options include eligible acquisitions and refinancing for entity-held rentals. Portfolio or multi-property scenarios require additional review."
+      ]
+    ],
+    "consider": [
+      "Entity ownership does not automatically eliminate personal guarantees.",
+      "The lender may require organizational documents, member information, and ownership verification.",
+      "An LLC\u2019s legal or tax effects are separate from the mortgage program; discuss the structure with your advisors."
+    ],
+    "docs": [
+      "Entity name, ownership, and organizational documents",
+      "Property rent, value, expenses, and loan request",
+      "Guarantor information, reserves, and current loans"
+    ],
+    "faq": [
+      [
+        "Can a loan close directly in an LLC?",
+        "Crestmark lists entity-compatible DSCR options. The specific entity, property, and lender rules must be reviewed."
+      ],
+      [
+        "Will I have to provide a personal guarantee?",
+        "Crestmark notes that a personal guarantee is typically required. The exact requirements depend on the program and structure."
+      ],
+      [
+        "Is this for a primary residence?",
+        "The published LLC DSCR offering is business-purpose financing for investment properties, rather than an owner-occupied primary home."
+      ]
+    ],
+    "related": [
+      "dscr",
+      "dscr-refinance",
+      "dscr-multifamily"
+    ],
+    "provider": "Crestmark Lending",
+    "source_status": "read directly",
+    "reviewed": "2026-10-04"
+  }
+]

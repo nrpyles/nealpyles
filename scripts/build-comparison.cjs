@@ -1,0 +1,14 @@
+// Generate the directly embedded comparison UI from the standalone calculator.
+const fs=require('node:fs');const postcss=require(process.env.POSTCSS_PATH||'postcss');const source=fs.readFileSync('compare/tool.html','utf8');const styles=source.match(/<style>([\s\S]*?)<\/style>/)[1];const css=postcss.parse(styles);
+css.walkRules(rule=>{if(rule.parent.type==='atrule'&&/keyframes$/.test(rule.parent.name))return;rule.selectors=rule.selectors.map(selector=>{let s=selector.replace(/\bheader h1\b/g,'header h2');if(s===':root'||s==='body'||s==='html')return'.mortgage-calculator';if(/^body\s/.test(s))return s.replace(/^body/,'.mortgage-calculator');return '.mortgage-calculator '+s});});
+fs.writeFileSync('assets/mortgage-comparison.css',css.toString());
+const body=source.match(/<body[^>]*>([\s\S]*?)<\/body>/)[1];const core=body.match(/<script>([\s\S]*?)<\/script>/)[1];fs.writeFileSync('assets/mortgage-comparison.js',core.replace("document.querySelector('details.settings')","document.querySelector('.mortgage-calculator details.settings')"));
+let ui=body.replace(/<script[\s\S]*?<\/script>/g,'').replace('<h1 id="titleText">','<h2 id="titleText">').replace(/(<h2 id="titleText">[\s\S]*?)<\/h1>/,'$1</h2>');
+// Print branding is useful on request, and does not crowd the customer's first view.
+ui=ui.replace(/<div class="brand-fields">([\s\S]*?)<\/div>/,'<details class="print-branding"><summary>Personalize your printable comparison</summary><div class="brand-fields">$1</div></details>');
+ui=ui.replace('<div class="cards" id="cards">','<div class="scenario-tabs" role="tablist" aria-label="Choose a loan option to edit"></div><div class="cards" id="cards">');
+ui=ui.replace('<div class="tablewrap"><table class="cmp" id="cmpTable">','<p class="comparison-swipe-hint">On your phone, swipe the table to compare all options.</p><div class="tablewrap"><table class="cmp" id="cmpTable">');
+let page=fs.readFileSync('compare/index.html','utf8');page=page.replace(/<!-- NATIVE CALCULATOR START -->[\s\S]*?<!-- NATIVE CALCULATOR END -->/,'__CALCULATOR__');page=page.replace(/<iframe id="toolFrame"[^>]*><\/iframe>/,'__CALCULATOR__');page=page.replace('__CALCULATOR__','<!-- NATIVE CALCULATOR START --><div class="mortgage-calculator site-calculator">'+ui+'</div><!-- NATIVE CALCULATOR END -->');
+if(!page.includes('mortgage-comparison.css'))page=page.replace('</head>','<link rel="stylesheet" href="/assets/mortgage-comparison.css"><script src="/assets/calculator-storage.js"></script></head>');
+if(!page.includes('mortgage-comparison.js'))page=page.replace('</body>','<script src="/assets/mortgage-comparison.js"></script><script src="/assets/calculator-accessibility.js"></script><script src="/assets/comparison-mobile.js"></script></body>');
+page=page.replace('class="site-page"','class="site-page comparison-page"');fs.writeFileSync('compare/index.html',page);

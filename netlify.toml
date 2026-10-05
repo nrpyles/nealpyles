@@ -1,3 +1,14 @@
 [build]
   publish = "."
   functions = "netlify/functions"
+
+# Keep legacy site copies accessible without competing with the active pages in search.
+[[headers]]
+  for = "/nealpyles-site_3/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+
+[[headers]]
+  for = "/nealpyles-site_4/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
