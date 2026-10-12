@@ -1,0 +1,67 @@
+.guide-hero .wrap{display:grid;grid-template-columns:1.4fr .6fr;gap:48px;align-items:center}
+.guide-hero h1{max-width:17ch}
+.guide-author{border-left:3px solid var(--site-coral);padding:22px 0 22px 28px}
+.guide-author img{width:96px;height:112px;object-fit:cover;object-position:top;border-radius:8px;margin-bottom:16px}
+.guide-author strong{display:block;font:800 30px/1.2 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.guide-author p{font-size:15px;color:var(--site-muted);margin:8px 0}
+.guide-hero .cta-row{display:flex;gap:16px 28px;align-items:center;flex-wrap:wrap}
+.guide-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;padding-top:40px;padding-bottom:64px}
+.guide-toc{position:sticky;top:24px;align-self:start;font-size:14px}
+.guide-toc ol{list-style:none;padding:0;margin:16px 0 22px;counter-reset:chapters}
+.guide-toc li{counter-increment:chapters;border-bottom:1px solid var(--site-line)}
+.guide-toc li a{display:flex;gap:12px;padding:11px 0;min-height:44px;line-height:1.5}
+.guide-toc li a:before{content:counter(chapters,decimal-leading-zero);font-size:12px;color:var(--site-coral);padding-top:2px}
+.guide-toc a:hover{color:var(--site-coral)}
+.guide-toc .site-text-link{font-size:14px}
+.guide-content{min-width:0}
+.guide-content section{padding:34px 0!important;scroll-margin-top:24px;border-bottom:1px solid var(--site-line)}
+.guide-content section:first-child{padding-top:0!important}
+.guide-content h2{font-size:clamp(38px,4vw,56px)}
+.guide-content h3{font:800 25px/1.25 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:28px 0 12px}
+.guide-content p,.guide-content li,.guide-content dd{font:500 17px/1.75 Inter,Arial,sans-serif;color:var(--site-muted)}
+.guide-content p{margin:0 0 18px}
+.guide-content ul,.guide-content ol{padding-left:22px;margin:16px 0 24px}
+.guide-content li{padding-left:4px;margin:10px 0}
+.guide-content strong{color:var(--site-cream)}
+.guide-content a:not(.site-button){text-decoration:underline;text-underline-offset:4px}
+.guide-callout{background:#142235;border-left:3px solid var(--site-coral);padding:22px 26px;margin:24px 0;border-radius:0 8px 8px 0}
+.guide-callout h3{margin:0 0 10px}
+.guide-callout p:last-child{margin-bottom:0}
+.guide-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}
+.guide-cards article{border:1px solid var(--site-line);border-radius:10px;padding:22px;background:#142235}
+.guide-cards h3{margin:0 0 12px}
+.guide-cards p:last-child{margin-bottom:0}
+.guide-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:16px}
+.guide-table caption{text-align:left;color:var(--site-cream);font-weight:700;margin-bottom:16px}
+.guide-table th,.guide-table td{padding:13px 12px;border-bottom:1px solid var(--site-line);text-align:left;vertical-align:top;overflow-wrap:anywhere}
+.guide-table td{color:var(--site-muted)}
+.guide-table th{color:var(--site-cream);font-weight:700}
+.guide-table .amount{white-space:nowrap;text-align:right;font-variant-numeric:tabular-nums}
+.guide-table .total th,.guide-table .total td{background:#f5ead3;color:#0b1628;font-weight:800}
+.guide-small{font-size:14px!important;line-height:1.7!important}
+.guide-form label{display:block;font:700 15px/1.6 Inter,sans-serif;margin-bottom:18px}
+.guide-form input:not([type=hidden]){display:block;width:100%;margin-top:7px;padding:13px 14px;color:var(--site-cream);background:#142235;border:1px solid #7d8997;border-radius:6px;font:500 17px/1.5 Inter,sans-serif;min-height:50px}
+.guide-form .guide-small{margin:20px 0}
+.guide-checklist{list-style:none;padding:0!important}
+.guide-checklist li{padding:0;margin:12px 0}
+.guide-checklist label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;min-height:44px}
+.guide-checklist input{width:20px;height:20px;margin:5px 0 0;flex:0 0 20px;accent-color:var(--site-coral)}
+.guide-glossary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 30px}
+.guide-glossary div{border-bottom:1px solid var(--site-line);padding-bottom:16px}
+.guide-glossary dt{font-weight:700;margin-bottom:6px}
+.guide-glossary dd{margin:0}
+.guide-faq details{border-bottom:1px solid var(--site-line);padding:18px 0}
+.guide-faq summary{font-size:17px;font-weight:700;cursor:pointer;min-height:44px;padding:8px 30px 8px 0}
+.guide-faq details p{margin:14px 0 0}
+.guide-form-section .intake-layout{grid-template-columns:1.1fr 1fr}
+.guide-form-section .guide-form{border:1px solid var(--site-line);padding:26px;border-radius:12px;background:#142235}
+.guide-return{font-size:15px!important;margin-top:24px!important}
+.guide-ratio{font:800 clamp(28px,4vw,42px)/1.25 'Barlow Condensed',sans-serif;color:var(--site-cream);padding:24px;border:1px solid var(--site-coral);border-radius:10px;margin:22px 0;text-align:center}
+.guide-source-links{display:flex;flex-wrap:wrap;gap:12px 24px}
+.guide-source-links a{font-size:14px;min-height:44px;padding:10px 0}
+.guide-home-link{border-top:1px solid var(--site-line);padding:40px 0}
+.guide-home-link .site-section-head{align-items:center}
+.guide-download-ready{max-width:760px;padding-top:60px!important;padding-bottom:80px!important}
+@media(max-width:900px){.guide-layout{grid-template-columns:1fr;gap:30px}.guide-toc{position:static}.guide-toc ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}.guide-hero .wrap{grid-template-columns:1fr;gap:26px}.guide-author{display:none}.guide-form-section .intake-layout{grid-template-columns:1fr}.guide-content section{scroll-margin-top:20px}}
+@media(max-width:600px){.guide-cards,.guide-glossary{grid-template-columns:1fr}.guide-layout{padding-top:28px;gap:20px}.guide-toc ol{gap:0 14px}.guide-toc{font-size:13px}.guide-table th,.guide-table td{padding:12px 6px;font-size:14px}.guide-content h2{font-size:40px}.guide-form-section .guide-form{padding:22px}.guide-callout{padding:20px}.guide-hero h1{font-size:clamp(48px,12vw,68px)}.guide-hero .site-button{width:100%}}
+@media print{.site-header,.site-footer,.guide-toc,.guide-form-section,.guide-hero .cta-row,.guide-source-links{display:none!important}.guide-layout,.guide-hero .wrap{display:block}.site-page{background:#fff;color:#111}.guide-content p,.guide-content li,.guide-content dd,.guide-content strong{color:#111}.guide-content section{break-inside:auto}.guide-content h2,.guide-content h3{break-after:avoid}.guide-callout,.guide-cards article{background:#fff;break-inside:avoid}.guide-hero h1 em{color:#111}.guide-table th,.guide-table td{color:#111}.guide-checklist input{appearance:auto}}
