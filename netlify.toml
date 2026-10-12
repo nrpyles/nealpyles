@@ -12,3 +12,17 @@
   for = "/nealpyles-site_4/*"
   [headers.values]
     X-Robots-Tag = "noindex, follow"
+
+
+# The investor guide is now the main DSCR page.
+[[redirects]]
+  from = "/dscr-guide"
+  to = "/dscr/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dscr-guide/*"
+  to = "/dscr/:splat"
+  status = 301
+  force = true
